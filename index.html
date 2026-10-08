@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC Arquitectura e Ingeniería Group | Soluciones Integrales</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#0284c7', // Azul Ingeniería Elegante
+                        brandDark: '#0369a1',
+                        dark: '#0f172a',
+                        surface: '#1e293b',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.95)), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold tracking-tight text-white flex items-center gap-2">
+                <span class="bg-brand text-white w-10 h-10 rounded-lg flex items-center justify-center text-xl">CC</span>
+                <span>GROUP <span class="text-brand text-xs block font-normal tracking-widest">ARQUITECTURA E INGENIERÍA</span></span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-300">
+                <a href="#inicio" class="hover:text-brand transition">Inicio</a>
+                <a href="#servicios" class="hover:text-brand transition">Especialidades</a>
+                <a href="#proyectos" class="hover:text-brand transition">Proyectos</a>
+            </div>
+            <a href="#contacto" class="bg-brand text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-brandDark transition shadow-lg shadow-brand/20">
+                Contacto Directo
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header id="inicio" class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl reveal">
+                <span class="text-brand font-bold text-xs uppercase tracking-widest block mb-4 border-l-2 border-brand pl-3">
+                    Ingeniería & Consultoría Estructural
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight mb-6">
+                    INNOVACIÓN Y RIGOR TÉCNICO EN CADA PROYECTO.
+                </h1>
+                <p class="text-lg text-slate-300 mb-8 font-light leading-relaxed">
+                    Desarrollo integral de proyectos de arquitectura, cálculo estructural, fiscalización de obras y consultoría técnica en Paraguay.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#proyectos" class="bg-brand text-white px-8 py-4 rounded-xl font-bold text-center hover:bg-brandDark transition">
+                        Ver Proyectos Ejecutados
+                    </a>
+                    <a href="#contacto" class="border border-slate-700 text-white px-8 py-4 rounded-xl font-bold text-center hover:border-brand transition">
+                        Consultar con el Equipo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-24 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="mb-16 reveal">
+                <span class="text-brand font-bold text-xs uppercase tracking-widest block mb-2">Unidades de Negocio</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Nuestras Soluciones Integrales</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-surface p-8 rounded-2xl border border-slate-800 hover:border-brand transition reveal">
+                    <div class="w-12 h-12 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Diseño Arquitectónico</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Proyectos residenciales, comerciales e industriales con visión funcional y moderna.</p>
+                </div>
+                <div class="bg-surface p-8 rounded-2xl border border-slate-800 hover:border-brand transition reveal">
+                    <div class="w-12 h-12 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Cálculo Estructural</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Ingeniería de alta precisión en hormigón armado y estructuras metálicas.</p>
+                </div>
+                <div class="bg-surface p-8 rounded-2xl border border-slate-800 hover:border-brand transition reveal">
+                    <div class="w-12 h-12 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Fiscalización de Obras</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Control de calidad, gestión de plazos y dirección técnica en ejecuciones complejas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="py-24 bg-slate-950">
+        <div class="container mx-auto px-6">
+            <div class="mb-16 reveal">
+                <span class="text-brand font-bold text-xs uppercase tracking-widest block mb-2">Portafolio</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Obras e Ingeniería</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 h-80 relative group reveal">
+                    <img src="https://images.unsplash.com/photo-1541888081622-4a004f25b29c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-brand font-bold text-xs uppercase">Edificación Corporativa</span>
+                        <h4 class="text-xl font-bold text-white mt-1">Proyecto Estructural</h4>
+                    </div>
+                </div>
+                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 h-80 relative group reveal">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-brand font-bold text-xs uppercase">Arquitectura Moderna</span>
+                        <h4 class="text-xl font-bold text-white mt-1">Residencia Unifamiliar</h4>
+                    </div>
+                </div>
+                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 h-80 relative group reveal">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-brand font-bold text-xs uppercase">Infraestructura</span>
+                        <h4 class="text-xl font-bold text-white mt-1">Fiscalización de Obra</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contacto -->
+    <footer id="contacto" class="bg-slate-950 border-t border-slate-800 py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-extrabold text-white mb-4">CC Arquitectura e Ingeniería Group</h2>
+            <p class="text-slate-400 mb-8 max-w-md mx-auto text-sm">Consultoría, cálculo e ingeniería de alto rendimiento en Paraguay.</p>
+            
+            <a href="https://wa.me/595991211859" class="inline-flex items-center gap-2 bg-brand text-white px-8 py-3.5 rounded-xl font-bold hover:bg-brandDark transition shadow-lg shadow-brand/20">
+                <i class="fa-brands fa-whatsapp text-xl"></i> Contactar al WhatsApp
+            </a>
+
+            <div class="mt-16 pt-8 border-t border-slate-900 text-xs text-slate-600 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 CC Group. Todos los derechos reservados.</p>
+                <p>Plataforma desarrollada por <a href="https://novatec.com.py/" target="_blank" class="text-slate-400 font-semibold">NovaTec Engineering</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
