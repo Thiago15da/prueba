@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A1 Maquetas | Maquetas Arquitectónicas de Alta Precisión</title>
+    <title>A1 Maquetas | Maquetismo Arquitectónico de Alta Precisión — Hernán Kiss</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,11 +13,11 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: '#d97706', // Ámbar / Bronce Arquitectónico
-                        brandLight: '#f59e0b',
-                        dark: '#090d16', // Azul noche profundo
-                        surface: '#111827',
-                        surfaceCard: '#1f2937',
+                        brand: '#0891b2', // Cian / Turquesa del logo A1
+                        brandDark: '#0e7490',
+                        slateDark: '#0f172a',
+                        surface: '#f8fafc',
+                        surfaceCard: '#ffffff',
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
@@ -29,38 +29,52 @@
     </script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #090d16; color: #f3f4f6; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #1e293b; }
         
         .hero-bg {
-            background: linear-gradient(rgba(9, 13, 22, 0.82), rgba(9, 13, 22, 0.96)), 
-                        url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000');
+            background: linear-gradient(rgba(255, 255, 255, 0.90), rgba(248, 250, 252, 0.96)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
         }
 
-        .gold-glow {
-            text-shadow: 0 0 25px rgba(217, 119, 6, 0.4);
-        }
-
-        .card-project {
+        /* Estilo de Tarjetas de Arquitectura */
+        .project-card {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .card-project:hover {
+        .project-card:hover {
             transform: translateY(-6px);
-            border-color: #d97706;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Botones de Filtro Activo */
+        .filter-btn.active {
+            background-color: #0891b2;
+            color: #ffffff;
+            border-color: #0891b2;
+            box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
+        }
+
+        /* Modal Transitions */
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal.open {
+            opacity: 1;
+            visibility: visible;
         }
 
         /* Animación Scroll Reveal */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+            transform: translateY(25px);
+            transition: all 0.7s ease;
         }
         .reveal.active {
             opacity: 1;
@@ -70,288 +84,507 @@
 </head>
 <body class="antialiased selection:bg-brand selection:text-white">
 
-    <!-- Topbar Informativo -->
-    <div class="bg-black/60 text-gray-400 text-xs py-2.5 border-b border-gray-800 hidden md:block">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-6">
-                <span><i class="fa-solid fa-microscope text-brand mr-2"></i>Corte Láser & Impresión 3D de Alta Resolución</span>
-                <span><i class="fa-solid fa-lightbulb text-brand mr-2"></i>Sistemas Integrados de Iluminación LED</span>
+    <!-- Topbar Corporativo -->
+    <div class="bg-slateDark text-slate-300 text-xs py-2.5 border-b border-slate-800 hidden md:block">
+        <div class="container mx-auto px-8 flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                <span><i class="fa-solid fa-microscope text-brand mr-2"></i>Corte Láser CNC & Impresión 3D de 8K</span>
+                <span><i class="fa-solid fa-lightbulb text-brand mr-2"></i>Sistemas Micro-LED Programables</span>
+                <span><i class="fa-solid fa-box text-brand mr-2"></i>Urnas de Acrílico & Pedestales de Exhibición</span>
             </div>
-            <div>
-                <span><i class="fa-solid fa-phone text-brand mr-2"></i>Contacto Directo: +595 981 510 973</span>
+            <div class="font-semibold">
+                <i class="fa-solid fa-phone text-brand mr-2"></i>Atención Directa: +595 981 510 973
             </div>
         </div>
     </div>
 
-    <!-- Navegación -->
-    <nav id="navbar" class="sticky top-0 z-50 bg-dark/95 backdrop-blur-md border-b border-gray-800/80 py-4 transition-all duration-300">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="text-2xl font-heading font-black tracking-tighter text-white flex items-center gap-3">
-                <div class="w-10 h-10 bg-brand text-dark rounded-lg flex items-center justify-center font-black text-2xl shadow-lg shadow-brand/20">
-                    A1
+    <!-- Navegación Glassmorphism Clara -->
+    <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 py-4 shadow-sm">
+        <div class="container mx-auto px-8 flex justify-between items-center">
+            <!-- Logo estilo Instagram de A1 -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-full p-[2px] bg-gradient-to-tr from-cyan-500 via-yellow-400 to-red-500 shadow-md">
+                    <div class="w-full h-full bg-white rounded-full flex items-center justify-center font-heading font-black text-xl text-brand group-hover:scale-105 transition">
+                        A
+                    </div>
                 </div>
                 <div>
-                    <span class="block leading-none text-xl font-extrabold tracking-widest text-white">MAQUETAS</span>
-                    <span class="text-[10px] font-bold text-brand tracking-[0.25em] uppercase">Hernán Kiss</span>
+                    <span class="block text-xl font-heading font-black text-slate900 leading-none tracking-tight">A1 MAQUETAS</span>
+                    <span class="text-[10px] font-bold text-slate-500 tracking-[0.25em] uppercase">Hernán Kiss — Arquitectura</span>
                 </div>
             </a>
-            <div class="hidden md:flex space-x-8 text-xs font-bold tracking-widest uppercase text-gray-300">
+
+            <!-- Menú principal -->
+            <div class="hidden lg:flex space-x-8 text-xs font-bold tracking-widest uppercase text-slate-600">
                 <a href="#inicio" class="hover:text-brand transition">Inicio</a>
-                <a href="#portafolio" class="hover:text-brand transition">Portafolio</a>
-                <a href="#nosotros" class="hover:text-brand transition">Filosofía</a>
-                <a href="#servicios" class="hover:text-brand transition">Servicios</a>
+                <a href="#portafolio" class="hover:text-brand transition">Portafolio & Filtros</a>
+                <a href="#taller" class="hover:text-brand transition">El Taller</a>
+                <a href="#proceso" class="hover:text-brand transition">Proceso Técnico</a>
+                <a href="#cotizador" class="hover:text-brand transition">Estimador</a>
             </div>
-            <a href="https://wa.me/595981510973" target="_blank" class="bg-brand text-dark px-6 py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider hover:bg-brandLight transition shadow-lg shadow-brand/20 flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp text-base"></i> Cotizar Maqueta
+
+            <a href="https://wa.me/595981510973" target="_blank" class="bg-brand text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-brandDark transition shadow-lg shadow-brand/20 flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-sm"></i> Solicitar Cotización
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="inicio" class="hero-bg min-h-[90vh] flex items-center relative py-20">
-        <div class="container mx-auto px-6 text-center md:text-left">
+    <!-- Hero Section Elegante -->
+    <header id="inicio" class="hero-bg min-h-[85vh] flex items-center relative py-20 border-b border-slate-200">
+        <div class="container mx-auto px-8">
             <div class="max-w-3xl reveal">
-                <div class="inline-flex items-center gap-3 bg-brand/10 border border-brand/30 px-4 py-1.5 rounded-full mb-6">
-                    <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
-                    <span class="text-brand font-bold text-xs uppercase tracking-widest">Maquetismo Arquitectónico Profesional</span>
-                </div>
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-heading font-black text-white leading-none mb-6 tracking-tight">
-                    PRECISIÓN A ESCALA.<br>
-                    <span class="text-brand gold-glow">IMPACTO EN VENTAS.</span>
+                <span class="inline-block bg-cyan-50 text-brand font-extrabold text-xs px-4 py-2 rounded-full uppercase tracking-widest mb-6 border border-cyan-200">
+                    Maquetismo Físico de Alta Precisión para Desarrolladoras
+                </span>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-heading font-black text-slate-900 leading-none mb-6 tracking-tight">
+                    EL ARTE DE VENDER <br>
+                    <span class="text-brand">EN POZO.</span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-300 mb-10 font-light leading-relaxed max-w-2xl">
-                    Transformamos planos y renders en piezas físicas de exhibición para showrooms inmobiliarios, concursos y presentaciones de alto nivel.
+                <p class="text-lg md:text-xl text-slate-600 mb-10 font-normal leading-relaxed">
+                    Transformamos planos y renders en réplicas físicas de alta fidelidad. La herramienta de conversión táctil definitiva para showrooms inmobiliarios, bancos y estudios de arquitectura en Paraguay.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#portafolio" class="bg-brand text-dark px-8 py-4 rounded-xl font-bold text-sm tracking-wider uppercase hover:bg-brandLight transition shadow-xl shadow-brand/20 text-center">
-                        Explorar Obras Destacadas
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#portafolio" class="bg-slateDark text-white px-8 py-4 rounded-xl font-bold text-xs tracking-widest uppercase hover:bg-slate-800 transition shadow-xl text-center">
+                        Ver Portafolio de Obras
                     </a>
-                    <a href="https://wa.me/595981510973" target="_blank" class="border border-gray-700 text-white px-8 py-4 rounded-xl font-bold text-sm tracking-wider uppercase hover:border-brand hover:text-brand transition text-center flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> Asesoría con Hernán Kiss
+                    <a href="https://wa.me/595981510973" target="_blank" class="bg-white border-2 border-slate-300 text-slate-800 px-8 py-4 rounded-xl font-bold text-xs tracking-widest uppercase hover:border-brand hover:text-brand transition text-center flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg text-green-500"></i> Contactar a Hernán Kiss
                     </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Cifras de Confianza -->
-    <section class="py-12 bg-surface border-y border-gray-800/60">
-        <div class="container mx-auto px-6">
+    <!-- Métricas / Confianza -->
+    <section class="py-12 bg-white border-b border-slate-200">
+        <div class="container mx-auto px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center reveal">
-                <div>
-                    <h3 class="text-3xl md:text-4xl font-heading font-black text-brand mb-1">100+</h3>
-                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Maquetas Entregadas</p>
+                <div class="p-4 border-r border-slate-100 last:border-none">
+                    <h3 class="text-3xl md:text-4xl font-heading font-black text-slate-900 mb-1">100+</h3>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Maquetas Fabricadas</p>
                 </div>
-                <div>
+                <div class="p-4 border-r border-slate-100 last:border-none">
                     <h3 class="text-3xl md:text-4xl font-heading font-black text-brand mb-1">1:50 a 1:500</h3>
-                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Escalas de Precisión</p>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Escalas de Alta Precisión</p>
                 </div>
-                <div>
-                    <h3 class="text-3xl md:text-4xl font-heading font-black text-brand mb-1">100%</h3>
-                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Fidelidad al Proyecto</p>
+                <div class="p-4 border-r border-slate-100 last:border-none">
+                    <h3 class="text-3xl md:text-4xl font-heading font-black text-slate-900 mb-1">100%</h3>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Fidelidad CAD / BIM</p>
                 </div>
-                <div>
-                    <h3 class="text-3xl md:text-4xl font-heading font-black text-brand mb-1">LED</h3>
-                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Iluminación Automatizada</p>
+                <div class="p-4">
+                    <h3 class="text-3xl md:text-4xl font-heading font-black text-brand mb-1">Micro-LED</h3>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Iluminación Automática</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portafolio de Proyectos Destacados (Sudameris, Wyndham, HUB, etc.) -->
-    <section id="portafolio" class="py-24 bg-dark">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
-                <div>
-                    <span class="text-brand font-bold text-xs uppercase tracking-[0.2em] block mb-2">Catálogo Seleccionado</span>
-                    <h2 class="text-3xl sm:text-5xl font-heading font-black text-white">PROYECTOS EMBLEMÁTICOS</h2>
-                </div>
-                <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0">Maquetas desarrolladas para las desarrolladoras e instituciones más reconocidas del país.</p>
+    <!-- PORTAFOLIO INTERACTIVO CON FILTRADO JS (LO MÁS IMPORTANTE) -->
+    <section id="portafolio" class="py-24 bg-surface">
+        <div class="container mx-auto px-8">
+            <div class="max-w-3xl mb-12 reveal">
+                <span class="text-brand font-extrabold text-xs uppercase tracking-widest block mb-2">Galería Oficial</span>
+                <h2 class="text-3xl sm:text-5xl font-heading font-black text-slate-900">PROYECTOS DESTACADOS</h2>
+                <p class="text-slate-600 text-sm mt-3">Selecciona una categoría para explorar las maquetas desarrolladas para las principales firmas del país.</p>
             </div>
 
-            <!-- Grilla de Trabajos Realizados -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Botones de Filtro Interactivo -->
+            <div class="flex flex-wrap gap-3 mb-12 reveal">
+                <button onclick="filterProjects('all')" class="filter-btn active px-6 py-3 rounded-xl border border-slate-300 font-bold text-xs uppercase tracking-wider transition">
+                    Todos los Proyectos
+                </button>
+                <button onclick="filterProjects('pozo')" class="filter-btn px-6 py-3 rounded-xl border border-slate-300 font-bold text-xs uppercase tracking-wider text-slate-700 bg-white transition hover:border-brand">
+                    Desarrolladoras & Pozo
+                </button>
+                <button onclick="filterProjects('hoteles')" class="filter-btn px-6 py-3 rounded-xl border border-slate-300 font-bold text-xs uppercase tracking-wider text-slate-700 bg-white transition hover:border-brand">
+                    Hotelería & Resorts
+                </button>
+                <button onclick="filterProjects('bancos')" class="filter-btn px-6 py-3 rounded-xl border border-slate-300 font-bold text-xs uppercase tracking-wider text-slate-700 bg-white transition hover:border-brand">
+                    Bancos & Corporativos
+                </button>
+                <button onclick="filterProjects('urbanismo')" class="filter-btn px-6 py-3 rounded-xl border border-slate-300 font-bold text-xs uppercase tracking-wider text-slate-700 bg-white transition hover:border-brand">
+                    Urbanismo & Masterplans
+                </button>
+            </div>
+
+            <!-- Grilla de Tarjetas Filtrables -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
                 <!-- Proyecto 1: Sudameris -->
-                <div class="card-project bg-surface rounded-2xl overflow-hidden border border-gray-800 reveal">
-                    <div class="relative h-80 overflow-hidden bg-gray-900">
-                        <img src="https://images.unsplash.com/photo-1541888081622-4a004f25b29c?auto=format&fit=crop&q=80&w=800" alt="Maqueta Torre Sudameris" class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-700">
-                        <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-brand text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-widest border border-brand/30">Institucional</span>
+                <div class="project-card bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm reveal" data-category="bancos">
+                    <div class="relative h-72 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1541888081622-4a004f25b29c?auto=format&fit=crop&q=80&w=800" alt="Maqueta Torre Sudameris" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-slateDark text-white text-[10px] font-bold px-3 py-1 rounded-lg uppercase tracking-wider">
+                            Corporativo / Banca
+                        </span>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-heading font-bold text-white mb-2">Torre Sudameris</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-4">Maqueta corporativa con sistema de luces por niveles e integración de acrílico grabado a láser.</p>
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-800 text-xs text-gray-500 font-semibold">
+                        <h3 class="text-2xl font-heading font-black text-slate-900 mb-2">Torre Sudameris</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-4">Maqueta institucional de gran escala con sistema de iluminación por circuitos independientes para áreas operativas.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 text-xs font-bold text-slate-700">
                             <span><i class="fa-solid fa-ruler-combined text-brand mr-1"></i> Escala 1:100</span>
-                            <span class="text-gray-300">Showroom Central</span>
+                            <button onclick="openModal('Sudameris', 'Banca / Corporativo', '1:100', 'Acrílico óptico, estructura en resina y micro-LEDs de 12V.', 'Showroom Central Asunción')" class="text-brand hover:underline font-extrabold flex items-center gap-1">
+                                Ver Ficha <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Proyecto 2: Wyndham -->
-                <div class="card-project bg-surface rounded-2xl overflow-hidden border border-gray-800 reveal">
-                    <div class="relative h-80 overflow-hidden bg-gray-900">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" alt="Maqueta Wyndham" class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-700">
-                        <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-brand text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-widest border border-brand/30">Hotelería & Complejo</span>
+                <div class="project-card bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm reveal" data-category="hoteles">
+                    <div class="relative h-72 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800" alt="Maqueta Wyndham" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-brand text-white text-[10px] font-bold px-3 py-1 rounded-lg uppercase tracking-wider">
+                            Hotelería & Resort
+                        </span>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-heading font-bold text-white mb-2">Proyecto Wyndham</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-4">Desarrollo volumétrico con paisajismo detallado, texturas de piscina y ambientación exterior.</p>
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-800 text-xs text-gray-500 font-semibold">
+                        <h3 class="text-2xl font-heading font-black text-slate-900 mb-2">Complejo Wyndham</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-4">Desarrollo volumétrico completo con trabajo de textura en piscinas, vegetación hiperrealista y acceso vial.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 text-xs font-bold text-slate-700">
                             <span><i class="fa-solid fa-ruler-combined text-brand mr-1"></i> Escala 1:200</span>
-                            <span class="text-gray-300">Desarrollo Turístico</span>
+                            <button onclick="openModal('Wyndham Resort', 'Hotelería', '1:200', 'Madera teca tratada, agua de resina epóxica y paisajismo artesanal.', 'Stand de Inversiones')" class="text-brand hover:underline font-extrabold flex items-center gap-1">
+                                Ver Ficha <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Proyecto 3: HUB / Iconia / Acro -->
-                <div class="card-project bg-surface rounded-2xl overflow-hidden border border-gray-800 reveal">
-                    <div class="relative h-80 overflow-hidden bg-gray-900">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="Maqueta Torre HUB / Iconia" class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-700">
-                        <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-brand text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-widest border border-brand/30">Residencial en Pozo</span>
+                <!-- Proyecto 3: HUB -->
+                <div class="project-card bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm reveal" data-category="pozo">
+                    <div class="relative h-72 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800" alt="Maqueta Torre HUB" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-slateDark text-white text-[10px] font-bold px-3 py-1 rounded-lg uppercase tracking-wider">
+                            Residencial en Pozo
+                        </span>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-heading font-bold text-white mb-2">Torre HUB & Iconia</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-4">Réplicas arquitectónicas para venta en pozo. Detalle micro-fiel de fachadas, balcones y amenities.</p>
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-800 text-xs text-gray-500 font-semibold">
+                        <h3 class="text-2xl font-heading font-black text-slate-900 mb-2">Torre HUB</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-4">Modelo táctil para ventas en pozo. Fachada ventilada calada por corte láser y terrazas con amenities detallados.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 text-xs font-bold text-slate-700">
                             <span><i class="fa-solid fa-ruler-combined text-brand mr-1"></i> Escala 1:75</span>
-                            <span class="text-gray-300">Stand de Ventas</span>
+                            <button onclick="openModal('Torre HUB', 'Venta en Pozo', '1:75', 'Corte láser CNC en estireno, carpinterías en acetato y luces LED por departamento.', 'Showroom Comercial')" class="text-brand hover:underline font-extrabold flex items-center gap-1">
+                                Ver Ficha <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
+
+                <!-- Proyecto 4: Iconia -->
+                <div class="project-card bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm reveal" data-category="pozo">
+                    <div class="relative h-72 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" alt="Maqueta Iconia" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-slateDark text-white text-[10px] font-bold px-3 py-1 rounded-lg uppercase tracking-wider">
+                            Residencial
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-heading font-black text-slate-900 mb-2">Torre Iconia</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-4">Maqueta de alta densidad urbana. Réplica exacta de balcones, parasoles de aluminio e iluminación interior.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 text-xs font-bold text-slate-700">
+                            <span><i class="fa-solid fa-ruler-combined text-brand mr-1"></i> Escala 1:100</span>
+                            <button onclick="openModal('Iconia', 'Desarrolladora Inmobiliaria', '1:100', 'Acrílico técnico, estructuras en ABS 3D y base de granito negro.', 'Centro de Ventas')" class="text-brand hover:underline font-extrabold flex items-center gap-1">
+                                Ver Ficha <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 5: Benedicta -->
+                <div class="project-card bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm reveal" data-category="urbanismo">
+                    <div class="relative h-72 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800" alt="Maqueta Benedicta" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-emerald-600 text-white text-[10px] font-bold px-3 py-1 rounded-lg uppercase tracking-wider">
+                            Masterplan Urbanístico
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-heading font-black text-slate-900 mb-2">Barrio Cerrado Benedicta</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-4">Maqueta topográfica curva de gran formato. Delimitación de lotes, trazado de calles y áreas verdes comunitarias.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 text-xs font-bold text-slate-700">
+                            <span><i class="fa-solid fa-ruler-combined text-brand mr-1"></i> Escala 1:500</span>
+                            <button onclick="openModal('Benedicta', 'Masterplan Urbanístico', '1:500', 'Topografía en corcho técnico, resinas para lagunas y micro-loteamiento.', 'Oficina de Ventas')" class="text-brand hover:underline font-extrabold flex items-center gap-1">
+                                Ver Ficha <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 6: Acro & Narciso -->
+                <div class="project-card bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm reveal" data-category="pozo">
+                    <div class="relative h-72 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="Maqueta Acro Narciso" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-slateDark text-white text-[10px] font-bold px-3 py-1 rounded-lg uppercase tracking-wider">
+                            Edificio de Departamentos
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-heading font-black text-slate-900 mb-2">Edificio Acro & Narciso</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-4">Maquetas gemelas para presentación de franquicia inmobiliaria. Acabados mate y vidrios serigrafiados.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 text-xs font-bold text-slate-700">
+                            <span><i class="fa-solid fa-ruler-combined text-brand mr-1"></i> Escala 1:100</span>
+                            <button onclick="openModal('Acro & Narciso', 'Arquitectura Residencial', '1:100', 'Corte láser de precisión en poliestireno y luces LED calidas.', 'Showroom Inmobiliario')" class="text-brand hover:underline font-extrabold flex items-center gap-1">
+                                Ver Ficha <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Filosofía / Sobre Hernán Kiss -->
-    <section id="nosotros" class="py-24 bg-surface relative overflow-hidden border-t border-gray-800">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="reveal">
-                    <span class="text-brand font-bold text-xs uppercase tracking-[0.2em] block mb-3">Filosofía & Taller</span>
-                    <h2 class="text-3xl sm:text-5xl font-heading font-black text-white mb-6 leading-tight">
-                        ARTE, TÉCNICA Y PERFECCIÓN EN CADA MILÍMETRO.
-                    </h2>
-                    <p class="text-gray-300 text-sm leading-relaxed mb-6 font-light">
-                        Detrás de cada proyecto en <strong class="text-white">A1 Maquetas</strong> está la visión técnica de <strong class="text-white">Hernán Kiss</strong>. Combinamos artesanía tradicional con tecnologías avanzadas de corte láser CNC, grabado químico e impresión 3D de alta definición.
-                    </p>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-8 font-light">
-                        Una maqueta física no es solo una representación a escala: es la herramienta táctil que permite a los compradores e inversores dimensionar el espacio, enamorarse del proyecto y tomar la decisión de compra antes de colocar el primer ladrillo.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 text-xs font-semibold text-gray-300">
-                        <div class="flex items-center gap-3 bg-dark/60 p-4 rounded-xl border border-gray-800">
-                            <i class="fa-solid fa-microchip text-brand text-xl"></i>
-                            <span>Sistemas Electrónicos LED</span>
-                        </div>
-                        <div class="flex items-center gap-3 bg-dark/60 p-4 rounded-xl border border-gray-800">
-                            <i class="fa-solid fa-box text-brand text-xl"></i>
-                            <span>Bases & Urnas de Protección</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative reveal">
-                    <div class="bg-gradient-to-tr from-brand/20 to-transparent rounded-3xl p-2 border border-brand/20">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800" alt="Taller A1 Maquetas" class="rounded-2xl shadow-2xl w-full h-[450px] object-cover">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Servicios Especializados -->
-    <section id="servicios" class="py-24 bg-dark">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <span class="text-brand font-bold text-xs uppercase tracking-widest block mb-2">Especialización</span>
-                <h2 class="text-3xl sm:text-4xl font-heading font-black text-white">SOLUCIONES PARA CADA RUBRO</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-surface p-8 rounded-2xl border border-gray-800 hover:border-brand transition reveal">
-                    <div class="w-14 h-14 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-building"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Inmobiliarias & Showrooms</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">Maquetas comerciales de gran impacto diseñadas para stands de venta, ferias e showrooms corporativos.</p>
-                </div>
-
-                <div class="bg-surface p-8 rounded-2xl border border-gray-800 hover:border-brand transition reveal">
-                    <div class="w-14 h-14 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-drafting-compass"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Estudios de Arquitectura</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">Modelos de estudio y maquetas de concurso con precisión milimétrica para validación volumétrica.</p>
-                </div>
-
-                <div class="bg-surface p-8 rounded-2xl border border-gray-800 hover:border-brand transition reveal">
-                    <div class="w-14 h-14 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-city"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Desarrollos Urbanísticos</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">Maquetas topográficas de gran formato para loteamientos, barrios cerrados y masterplans.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer / Cotizaciones -->
-    <footer id="contacto" class="bg-black text-gray-400 py-20 border-t border-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16 reveal">
+    <!-- Modal de Ficha Técnica de Proyecto -->
+    <div id="project-modal" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-slateDark/80 backdrop-blur-sm opacity-0 invisible">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-8 shadow-2xl relative border border-slate-200">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-800 text-2xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="text-brand font-bold text-xs uppercase tracking-widest block mb-1" id="modal-category">Categoría</span>
+            <h3 class="text-3xl font-heading font-black text-slate-900 mb-4" id="modal-title">Nombre del Proyecto</h3>
+            
+            <div class="grid grid-cols-2 gap-4 my-6 p-4 bg-slate-50 rounded-2xl border border-slate-100 text-xs font-semibold text-slate-700">
                 <div>
-                    <h2 class="text-3xl font-heading font-black text-white mb-4">¿Tiene un proyecto en puerta?</h2>
-                    <p class="text-gray-400 text-sm mb-8">Envíenos los planos en DWG/PDF o renders de su proyecto para presupuestar la maqueta a medida.</p>
-                    
-                    <div class="space-y-4 text-sm text-gray-300">
-                        <div class="flex items-center gap-3">
-                            <i class="fa-brands fa-whatsapp text-brand text-xl"></i>
-                            <span class="font-bold text-white">+595 981 510 973</span>
+                    <span class="text-slate-400 block uppercase text-[10px]">Escala Técnica:</span>
+                    <span class="text-slate-900 text-sm font-bold" id="modal-scale">1:100</span>
+                </div>
+                <div>
+                    <span class="text-slate-400 block uppercase text-[10px]">Destino de Exhibición:</span>
+                    <span class="text-slate-900 text-sm font-bold" id="modal-destination">Showroom</span>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Materiales & Iluminación:</h4>
+                <p class="text-slate-600 text-sm leading-relaxed" id="modal-materials">Detalles de materiales...</p>
+            </div>
+
+            <div class="pt-6 border-t border-slate-100 flex justify-between items-center">
+                <span class="text-xs font-bold text-slate-500">Fabricado en Asunción por Hernán Kiss</span>
+                <a href="https://wa.me/595981510973" target="_blank" class="bg-brand text-white px-6 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-brandDark transition">
+                    Consultar Maqueta Similar
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Taller y Filosofía (Hernán Kiss) -->
+    <section id="taller" class="py-24 bg-white border-y border-slate-200">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <span class="text-brand font-extrabold text-xs uppercase tracking-widest block mb-3">El Taller A1</span>
+                    <h2 class="text-3xl sm:text-5xl font-heading font-black text-slate-900 mb-6 leading-tight">
+                        RIGOR TÉCNICO & ARTESANÍA FÍSICA.
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Detrás de cada obra en <strong class="text-slate-900">A1 Maquetas</strong> está el criterio técnico y supervisión directa de <strong class="text-slate-900">Hernán Kiss</strong>. Fusionamos tecnología industrial de última generación con acabado artesanal a mano.
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-8">
+                        En el mercado inmobiliario actual, las imágenes digitales y renders 3D son comunes; una maqueta física real en el showroom cambia la percepción del comprador, otorgándole volumen, peso y tangible solvencia a la inversión.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 text-xs font-bold text-slate-800">
+                        <div class="p-4 bg-surface rounded-xl border border-slate-200 flex items-center gap-3">
+                            <i class="fa-solid fa-microchip text-brand text-xl"></i>
+                            <span>Corte Láser CNC Preciso</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-user text-brand text-xl"></i>
-                            <span>Hernán Kiss — Director Técnico</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-location-dot text-brand text-xl"></i>
-                            <span>Asunción, Paraguay</span>
+                        <div class="p-4 bg-surface rounded-xl border border-slate-200 flex items-center gap-3">
+                            <i class="fa-solid fa-cube text-brand text-xl"></i>
+                            <span>Impresión 3D de Resina</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-surface p-8 rounded-2xl border border-gray-800">
-                    <form onsubmit="event.preventDefault(); alert('Demo de A1 Maquetas desarrollada por NovaTec Engineering.');">
+                <div class="relative reveal">
+                    <div class="bg-slate-100 rounded-3xl p-3 border border-slate-200 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800" alt="Taller A1 Maquetas" class="rounded-2xl w-full h-[450px] object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso Técnico en 5 Pasos -->
+    <section id="proceso" class="py-24 bg-surface">
+        <div class="container mx-auto px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-brand font-extrabold text-xs uppercase tracking-widest block mb-2">Paso a Paso</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-black text-slate-900">PROCESO DE FABRICACIÓN</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center reveal">
+                    <span class="w-10 h-10 bg-cyan-50 text-brand rounded-full flex items-center justify-center font-black mx-auto mb-4 text-sm">01</span>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2">Lectura CAD / BIM</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed">Recepción de planos de arquitectura, fachadas y cortes del proyecto.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center reveal">
+                    <span class="w-10 h-10 bg-cyan-50 text-brand rounded-full flex items-center justify-center font-black mx-auto mb-4 text-sm">02</span>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2">Despiece Digital</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed">Programación de corte vectorizado por capas e impresión 3D de detalles.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center reveal">
+                    <span class="w-10 h-10 bg-cyan-50 text-brand rounded-full flex items-center justify-center font-black mx-auto mb-4 text-sm">03</span>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2">Ensamblado artesanal</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed">Montaje milimétrico de estructuras, balcones, carpinterías y texturas.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center reveal">
+                    <span class="w-10 h-10 bg-cyan-50 text-brand rounded-full flex items-center justify-center font-black mx-auto mb-4 text-sm">04</span>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2">Electrónica LED</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed">Instalación de micro-circuitos para iluminación de plantas y amenidades.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center reveal">
+                    <span class="w-10 h-10 bg-cyan-50 text-brand rounded-full flex items-center justify-center font-black mx-auto mb-4 text-sm">05</span>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2">Urna & Entrega</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed">Protección en acrílico óptico de 4mm y pedestal para showroom.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTIMADOR INTERACTIVO DE ESCALA PARA ARQUITECTOS -->
+    <section id="cotizador" class="py-20 bg-white border-t border-slate-200">
+        <div class="container mx-auto px-8 max-w-4xl">
+            <div class="bg-slateDark text-white p-8 md:p-12 rounded-3xl shadow-2xl reveal">
+                <span class="text-brand font-bold text-xs uppercase tracking-widest block mb-2">Asesor Técnico</span>
+                <h2 class="text-2xl sm:text-4xl font-heading font-black mb-6">ESTIMADOR RÁPIDO DE ESCALA</h2>
+                <p class="text-slate-300 text-sm mb-8">Selecciona las características de tu proyecto para conocer la escala recomendada para tu showroom:</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 text-slate-800">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Tipo de Proyecto:</label>
+                        <select id="calc-type" onchange="calculateEstimate()" class="w-full bg-slate-800 text-white border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand">
+                            <option value="torre">Torre Residencial / Corporativa (Pisos)</option>
+                            <option value="resort">Complejo Hotelero / Resort</option>
+                            <option value="lote">Loteamiento / Barrio Cerrado</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Destino Principal:</label>
+                        <select id="calc-use" onchange="calculateEstimate()" class="w-full bg-slate-800 text-white border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand">
+                            <option value="showroom">Showroom de Ventas en Pozo</option>
+                            <option value="feria">Expo / Feria de Inversiones</option>
+                            <option value="concurso">Concurso de Arquitectura</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-800/80 rounded-2xl border border-slate-700/80" id="calc-result">
+                    <span class="text-xs text-brand font-bold uppercase tracking-wider block mb-1">Recomendación de Hernán Kiss:</span>
+                    <p class="text-lg font-bold text-white mb-1" id="calc-scale">Escala Sugerida: 1:100 o 1:75</p>
+                    <p class="text-xs text-slate-400" id="calc-desc">Ideal para torres en pozo. Permite visualizar departamentos, balcones e iluminación LED piso por piso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contacto -->
+    <footer class="bg-slateDark text-slate-400 py-16 border-t border-slate-800">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
+                <div>
+                    <a href="#" class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-full p-[2px] bg-gradient-to-tr from-cyan-500 via-yellow-400 to-red-500">
+                            <div class="w-full h-full bg-slateDark rounded-full flex items-center justify-center font-heading font-black text-lg text-white">
+                                A
+                            </div>
+                        </div>
+                        <span class="text-xl font-heading font-black text-white tracking-tight">A1 MAQUETAS</span>
+                    </a>
+                    <p class="text-slate-400 text-sm mb-6 max-w-md">
+                        Taller especializado en maquetismo físico arquitectónico para desarrolladoras inmobiliarias, estudios de arquitectura y bancos en Paraguay.
+                    </p>
+                    <div class="space-y-3 text-sm text-slate-300 font-semibold">
+                        <p><i class="fa-brands fa-whatsapp text-brand mr-2"></i> +595 981 510 973</p>
+                        <p><i class="fa-solid fa-user text-brand mr-2"></i> Hernán Kiss — Maquetista Principal</p>
+                        <p><i class="fa-solid fa-location-dot text-brand mr-2"></i> Asunción, Paraguay</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
+                    <h4 class="text-white font-bold text-base mb-4">Enviar Planos o Consultas</h4>
+                    <form onsubmit="event.preventDefault(); alert('Prototipo de A1 Maquetas desarrollado por NovaTec Engineering.');">
                         <div class="mb-4">
-                            <label class="block text-xs font-bold text-gray-400 uppercase mb-2">Nombre / Empresa</label>
-                            <input type="text" class="w-full bg-dark border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand" placeholder="Ej. Estudio / Inmobiliaria XYZ">
+                            <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Nombre / Desarrolladora</label>
+                            <input type="text" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand" placeholder="Ej. Arquitectura & Inversiones">
                         </div>
                         <div class="mb-4">
-                            <label class="block text-xs font-bold text-gray-400 uppercase mb-2">Teléfono de Contacto</label>
-                            <input type="text" class="w-full bg-dark border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand" placeholder="Ej. 0981 510 973">
+                            <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Teléfono</label>
+                            <input type="text" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand" placeholder="Ej. 0981 510 973">
                         </div>
-                        <div class="mb-6">
-                            <label class="block text-xs font-bold text-gray-400 uppercase mb-2">Detalles del Proyecto / Escala requerida</label>
-                            <textarea rows="3" class="w-full bg-dark border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand" placeholder="Torre residencial de 20 pisos / Escala 1:100 / Fecha estimada de entrega..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-brand text-dark font-extrabold uppercase tracking-wider py-4 rounded-xl hover:bg-brandLight transition">
-                            Solicitar Presupuesto Técnico
+                        <button type="submit" class="w-full bg-brand text-white font-bold uppercase tracking-wider py-3.5 rounded-xl hover:bg-brandDark transition">
+                            Contactar por WhatsApp
                         </button>
                     </form>
                 </div>
             </div>
 
-            <div class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-semibold uppercase tracking-wider text-gray-600">
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-semibold uppercase tracking-wider">
                 <p>&copy; 2026 A1 Maquetas — Hernán Kiss. Todos los derechos reservados.</p>
-                <p>Plataforma desarrollada por <a href="https://novatec.com.py/" target="_blank" class="text-gray-300 font-bold hover:text-white transition">NovaTec Engineering</a></p>
+                <p>Plataforma desarrollada por <a href="https://novatec.com.py/" target="_blank" class="text-slate-300 font-bold hover:text-white transition">NovaTec Engineering</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- Botón flotante de WhatsApp directo a Hernán Kiss -->
+    <!-- Botón flotante WhatsApp -->
     <a href="https://wa.me/595981510973" target="_blank" class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform z-50">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Script de Animación Scroll -->
+    <!-- LÓGICA JAVASCRIPT -->
     <script>
+        // 1. FILTRADO INTERACTIVO DE PROYECTOS POR RUBRO
+        function filterProjects(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 2. MODAL DE FICHA TÉCNICA
+        function openModal(title, category, scale, materials, destination) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-category').innerText = category;
+            document.getElementById('modal-scale').innerText = scale;
+            document.getElementById('modal-materials').innerText = materials;
+            document.getElementById('modal-destination').innerText = destination;
+            
+            document.getElementById('project-modal').classList.add('open');
+        }
+
+        function closeModal() {
+            document.getElementById('project-modal').classList.remove('open');
+        }
+
+        // 3. WIDGET ESTIMADOR
+        function calculateEstimate() {
+            const type = document.getElementById('calc-type').value;
+            const scaleElem = document.getElementById('calc-scale');
+            const descElem = document.getElementById('calc-desc');
+
+            if (type === 'torre') {
+                scaleElem.innerText = "Escala Sugerida: 1:100 o 1:75";
+                descElem.innerText = "Ideal para torres residenciales. Destaca la distribución de balcones, amenities y sistema de luces LED piso por piso.";
+            } else if (type === 'resort') {
+                scaleElem.innerText = "Escala Sugerida: 1:200 o 1:300";
+                descElem.innerText = "Permite apreciar el volumen completo del complejo, la interacción con piscinas de resina y paisajismo exterior.";
+            } else {
+                scaleElem.innerText = "Escala Sugerida: 1:500 o 1:1000";
+                descElem.innerText = "Especial para loteamientos y barrios cerrados. Delimita la topografía del terreno, accesos y trazado de calles.";
+            }
+        }
+
+        // 4. SCROLL REVEAL OBSERVER
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
