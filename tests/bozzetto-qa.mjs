@@ -20,9 +20,7 @@ await check('Marca, propuesta y contacto correctos',async()=>{
  assert.equal(await desktop.locator('img[src="assets/bozzetto-mark.svg"]').count(),3);
 });
 await check('Entrada cinematográfica se retira automáticamente',async()=>{
- const state=await desktop.locator('#opening').evaluate(el=>({visibility:getComputedStyle(el).visibility,pointerEvents:getComputedStyle(el).pointerEvents}));
- assert.equal(state.visibility,'hidden','la cortina sigue visible');
- assert.equal(state.pointerEvents,'none','la cortina bloquea clics');
+ assert.equal(await desktop.locator('#opening').count(),0,'la cortina sigue en el DOM y no terminó la animación');
  await desktop.locator('a[href="#colecciones"]').first().click();
  assert.equal(await desktop.evaluate(()=>location.hash),'#colecciones');
 });
