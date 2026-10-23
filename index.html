@@ -1,65 +1,382 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f8f7f4"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="description" content="Demostración visual de sitio web realizada por NovaTec Engineering para PIKININUS Eventos. No es un sitio oficial de la empresa."><title>PIKININUS Eventos | Propuesta visual · NovaTec Engineering</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://images.unsplash.com"><style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-:root{--bg:#f8f7f4;--ink:#171a22;--muted:#777b85;--accent:#f47f6a;--accent2:#f6c44c;--card:#fff;--line:rgba(25,29,33,.12);--font:'Manrope',sans-serif;--display:'Fraunces',serif;--radius:22px;--max:1240px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased}body.nav-open{overflow:hidden}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.5}img{max-width:100%;display:block}::selection{background:var(--accent);color:#fff}:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.skip{position:fixed;left:1rem;top:-6rem;background:var(--ink);color:var(--bg);z-index:999;padding:1rem}.skip:focus{top:1rem}
-#site{overflow:hidden}.wrap{width:min(var(--max),calc(100% - 76px));margin-inline:auto}
-.notice{background:#111722;color:#ecf0f5;text-align:center;font-size:11px;font-weight:700;letter-spacing:.045em;padding:9px 16px;line-height:1.5}.notice strong{color:#ffca77}
-header{height:84px;position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-nav{height:100%;display:flex;justify-content:space-between;align-items:center;gap:22px}.logo{font-size:24px;font-weight:900;line-height:1;letter-spacing:-.085em;max-width:260px;white-space:nowrap}.logo span{color:var(--accent)}.navlinks{display:flex;gap:30px;align-items:center}.navlinks>a:not(.btn){font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;transition:opacity .2s}.navlinks>a:hover{opacity:.55}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;padding:16px 23px;border-radius:100px;background:var(--ink);color:var(--bg);font-size:13px;font-weight:800;letter-spacing:-.015em;min-height:50px;transition:transform .23s,background .23s,box-shadow .23s}.btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px #0002}.btn.accent{background:var(--accent);color:var(--btnink,#151515)}.btn.outline{background:transparent;border:1px solid currentColor;color:inherit}.btn.white{background:#fff;color:#161616}.btn.block{width:100%}.btn svg,.arrow{width:18px;height:18px}.mobile-toggle{display:none;border:0;background:none;color:inherit;padding:8px;font-size:26px}
-section{scroll-margin-top:90px}.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}.eyebrow:before{content:'';height:8px;width:8px;background:var(--accent);border-radius:50%}.lead{font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:var(--muted);max-width:635px}.muted{color:var(--muted)}.serif{font-family:var(--display)}
-h1,h2,h3,p{margin-top:0}h1{font-family:var(--display);font-weight:650;letter-spacing:-.055em;line-height:.99;font-size:clamp(56px,7.6vw,120px);margin-bottom:26px}h2{font-family:var(--display);font-weight:650;letter-spacing:-.052em;line-height:1.06;font-size:clamp(43px,5vw,76px);margin-bottom:18px}h3{font-size:23px;line-height:1.2;letter-spacing:-.035em}p{line-height:1.7}.section{padding:116px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:52px}.section-head>div:first-child{max-width:760px}
-.hero{min-height:760px;position:relative;display:flex;align-items:center}.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:30px;padding-top:75px;padding-bottom:80px}.hero h1 em{font-style:normal;color:var(--accent)}.hero .lead{max-width:530px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}.hero-photo{height:580px;position:relative;overflow:hidden;border-radius:var(--radius);background:#dad5c9;box-shadow:0 28px 80px #0002}.hero-photo img{height:100%;width:100%;object-fit:cover}.hero-stamp{position:absolute;bottom:24px;left:24px;right:24px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fffffff0;border-radius:14px;font-weight:700;font-size:13px;color:#191919;backdrop-filter:blur(7px)}.hero-stamp small{color:#777;font-size:11px}
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;overflow:hidden}.marquee-track{white-space:nowrap;display:flex;gap:65px;align-items:center;width:max-content;animation:marq 30s linear infinite}.marquee span{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.marquee b{color:var(--accent);font-size:22px}@keyframes marq{to{transform:translateX(-50%)}}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:21px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.feature{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:31px;transition:transform .25s}.feature:hover{transform:translateY(-6px)}.feature .num{color:var(--accent);font-weight:800;font-size:13px;margin-bottom:54px}.feature h3{margin:0 0 14px}.feature p{margin-bottom:0;font-size:14px;color:var(--muted)}.feature-icon{font-size:32px;margin-bottom:26px}
-.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:var(--radius);background:#ddd;grid-column:span 4;min-height:370px}.gallery figure.wide{grid-column:span 6;min-height:440px}.gallery img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .6s}.gallery figure:hover img{transform:scale(1.06)}.gallery figcaption{position:absolute;bottom:0;inset-inline:0;padding:45px 24px 22px;color:#fff;font-weight:750;background:linear-gradient(transparent,#000a)}.gallery figcaption small{display:block;font-size:11px;color:#fff9;font-weight:600;margin-top:4px}
-.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}.filter{border:1px solid var(--line);background:transparent;color:var(--ink);padding:12px 19px;border-radius:80px;font-size:12px;font-weight:800;transition:.2s}.filter[aria-pressed=true],.filter:hover{background:var(--ink);color:var(--bg)}.filterable[hidden]{display:none!important}
-.quote{background:var(--card);border:1px solid var(--line);border-radius:calc(var(--radius) + 9px);padding:48px;box-shadow:0 24px 70px #0000000c}.quote h3{font-family:var(--display);font-size:clamp(32px,3.5vw,54px);margin:0 0 12px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field{display:flex;flex-direction:column;gap:8px}.field.wide{grid-column:1/-1}.field label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.085em}.field input,.field select,.field textarea{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:15px 16px;outline:none;min-height:53px}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 20%,transparent)}textarea{min-height:110px!important;resize:vertical}.smallnote{font-size:12px;line-height:1.65;color:var(--muted)}.quote-bottom{display:flex;justify-content:space-between;align-items:center;gap:25px;margin-top:22px}.quote-bottom p{margin:0;max-width:350px}
-.bento{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:stretch}.bento-photo{min-height:530px;position:relative;border-radius:var(--radius);overflow:hidden}.bento-photo img{position:absolute;width:100%;height:100%;object-fit:cover}.bento-copy{background:var(--ink);color:var(--bg);padding:65px 48px;border-radius:var(--radius);display:flex;flex-direction:column;justify-content:space-between}.bento-copy h2{font-size:clamp(42px,4.5vw,67px)}.bento-copy p{color:color-mix(in srgb,var(--bg) 72%,transparent)}
-.pills{display:flex;flex-wrap:wrap;gap:8px}.pill{border:1px solid currentColor;border-radius:100px;padding:9px 15px;font-size:12px;font-weight:750}.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:100px;align-items:center}.split-image{height:540px;border-radius:var(--radius);overflow:hidden}.split-image img{height:100%;width:100%;object-fit:cover}.checklist{padding:0;list-style:none;display:grid;gap:18px}.checklist li{display:flex;gap:14px;align-items:flex-start;line-height:1.5}.checklist li:before{content:'✓';color:var(--accent);font-weight:900}.closing{background:var(--ink);color:var(--bg);padding:100px 0;position:relative;overflow:hidden}.closing h2{font-size:clamp(48px,7.5vw,112px);max-width:980px}.closing .lead{color:color-mix(in srgb,var(--bg) 65%,transparent)}
-footer{background:#111722;color:#ffffffa8;padding:42px 0}.footer-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:35px;flex-wrap:wrap}.footer-grid strong{color:white}.footer-links{display:flex;gap:25px;flex-wrap:wrap;font-size:12px}.footer-fine{border-top:1px solid #ffffff24;margin-top:35px;padding-top:20px;font-size:11px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;line-height:1.5}
-.float-wa{position:fixed;right:25px;bottom:25px;background:#23c46b;color:#092016;border:2px solid white;border-radius:100px;z-index:29;box-shadow:0 10px 30px #0003;padding:14px 17px;font-size:13px;font-weight:850;display:flex;align-items:center;gap:8px;transition:transform .2s}.float-wa:hover{transform:translateY(-4px)}.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%) translateY(150px);padding:14px 24px;background:#151515;color:white;font-size:13px;font-weight:700;z-index:99;border-radius:12px;transition:transform .25s}.toast.show{transform:translateX(-50%) translateY(0)}
-.reveal{opacity:0;transform:translateY(25px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:none}
-[data-theme=party]{--bg:#fffaf0;--ink:#332349;--muted:#786e83;--accent:#ed65a9;--accent2:#f8bf54;--card:#fff;--display:'Fraunces',serif;--radius:29px;--btnink:#fff}
-[data-theme=car]{--bg:#0c1115;--ink:#f5f6f2;--muted:#a4adb1;--accent:#d5ef68;--accent2:#98abbc;--card:#171e23;--line:#ffffff1a;--display:'Space Grotesk',sans-serif;--radius:14px;--btnink:#142012}
-[data-theme=merch]{--bg:#f8f6f0;--ink:#1a2450;--muted:#647086;--accent:#ff634e;--accent2:#f1cf30;--card:#fff;--display:'Space Grotesk',sans-serif;--radius:22px;--btnink:#fff}
-[data-theme=reception]{--bg:#fbf7f3;--ink:#3d2636;--muted:#877985;--accent:#a86a8d;--accent2:#d8b88a;--card:#fff;--display:'Playfair Display',serif;--radius:9px;--btnink:#fff}
-[data-theme=boho]{--bg:#f3eee5;--ink:#3f392e;--muted:#867b6e;--accent:#b45f44;--accent2:#8d9867;--card:#fffdf6;--display:'Fraunces',serif;--radius:4px;--btnink:#fff}
-[data-theme=furniture]{--bg:#f5f3ed;--ink:#292c26;--muted:#7d8078;--accent:#9c6f47;--accent2:#8b9584;--card:#fff;--display:'Manrope',sans-serif;--radius:3px;--btnink:#fff}
-[data-theme=car] header{background:#0c1115ee}[data-theme=car] .hero-photo{box-shadow:none}[data-theme=car] .hero-stamp{background:#101619de;color:#eff2e5;border:1px solid #ffffff28}[data-theme=car] .hero-stamp small{color:#aab2b3}[data-theme=car] .filter[aria-pressed=true]{background:var(--accent);color:#121a1b}[data-theme=car] .quote{box-shadow:none}
-[data-theme=party] .hero{background:radial-gradient(circle at 85% 15%,#f7ddeb 0,transparent 40%),radial-gradient(circle at 10% 80%,#fff1cc,transparent 47%)}[data-theme=party] .hero-photo{border-radius:180px 180px 45px 45px;transform:rotate(1deg)}[data-theme=party] .hero-stamp{transform:rotate(-1deg)}[data-theme=party] .marquee{background:#ffe7a1}
-[data-theme=merch] .hero{background:linear-gradient(135deg,#f6f3e8 55%,#f9e8da)}[data-theme=merch] .hero h1{text-transform:uppercase;font-size:clamp(60px,8.6vw,130px);letter-spacing:-.09em}[data-theme=merch] .hero-photo{border-radius:38% 38% 12% 12%}[data-theme=merch] .marquee{background:var(--accent2)}
-[data-theme=reception] .hero-photo{border-radius:220px 220px 9px 9px}[data-theme=reception] .hero h1{font-weight:400}[data-theme=reception] .hero h1 em{font-style:italic}[data-theme=reception] .eyebrow:before{border-radius:0}
-[data-theme=boho] .hero-photo{border-radius:240px 240px 0 0}[data-theme=boho] .hero h1 em{font-style:italic}[data-theme=boho] .feature{box-shadow:9px 9px 0 #d7cbb7}[data-theme=boho] .marquee{background:#d9dac6}
-[data-theme=furniture] .hero h1{text-transform:uppercase;font-weight:800;letter-spacing:-.075em}[data-theme=furniture] .hero-photo{border-radius:2px}[data-theme=furniture] .feature{border-radius:3px}[data-theme=furniture] .btn{border-radius:3px}[data-theme=furniture] .marquee{background:#e9e7de}
-@media(max-width:1000px){.wrap{width:min(var(--max),calc(100% - 42px))}.navlinks{gap:15px}.navlinks>a:not(.btn){font-size:11px}.logo{font-size:21px}.hero-grid{grid-template-columns:1fr 1fr}.hero-photo{height:490px}.split{gap:45px}.bento-copy{padding:42px 30px}}
-@media(max-width:740px){header{height:68px}.wrap{width:calc(100% - 34px)}.mobile-toggle{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:25px 20px 35px;flex-direction:column;align-items:stretch;gap:22px}.navlinks.open{display:flex}.navlinks>a:not(.btn){font-size:14px}.hero{min-height:auto}.hero-grid{grid-template-columns:1fr;gap:35px;padding-top:60px;padding-bottom:44px}.hero-photo{height:400px}.hero h1{font-size:clamp(50px,14vw,90px)}.hero .lead{font-size:16px}.section{padding:75px 0}.section-head{display:block;margin-bottom:30px}.grid3,.grid2{grid-template-columns:1fr}.feature .num{margin-bottom:25px}.gallery{grid-template-columns:1fr 1fr;gap:10px}.gallery figure,.gallery figure.wide{grid-column:auto;min-height:230px}.bento,.split{grid-template-columns:1fr;gap:20px}.bento-photo,.split-image{height:340px;min-height:340px}.bento-copy{padding:34px}.quote{padding:28px 20px}.form-grid{grid-template-columns:1fr}.quote-bottom{display:block}.quote-bottom .btn{width:100%;margin-top:18px}.closing{padding:70px 0}.float-wa{right:16px;bottom:16px}.hero-stamp{left:12px;right:12px;bottom:12px;font-size:11px;padding:12px}.hero-stamp small{font-size:10px}.gallery figcaption{font-size:11px;padding:35px 12px 14px}}
-@media(max-width:400px){.gallery{grid-template-columns:1fr}.gallery figure,.gallery figure.wide{min-height:280px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
-</style></head><body>
-<a class="skip" href="#contenido">Ir al contenido</a>
-<div class="notice"><strong>DEMO NOVATEC</strong> · Propuesta visual independiente, no oficial ni encargada por PIKININUS Eventos. Fotos ilustrativas; información a validar.</div>
-<div id="site" data-theme="party">
-<header><nav class="wrap" aria-label="Navegación principal"><a class="logo" href="#inicio" aria-label="Inicio de PIKININUS Eventos">PIKINI<span>NUS</span></a><button class="mobile-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button><div class="navlinks" id="menu"><a href="#experiencia" >Experiencia</a><a href="#opciones" >Opciones</a><a href="#momentos" >Momentos</a><a href="#cotizar" class="btn accent">Reservar ↗</a></div></nav></header>
-<main id="contenido">
-<section class="hero" id="inicio"><div class="wrap hero-grid"><div class="hero-copy reveal"><span class="eyebrow">Salón y fiestas infantiles · Luque</span><h1 style="margin-top:25px">Que su día sea <em>una fiesta.</em></h1><p class="lead">Un espacio para celebrar a lo grande: salón climatizado, juegos, decoración y momentos que se convierten en recuerdos.</p><div class="hero-actions"><a href="#cotizar" class="btn accent">Quiero celebrar <span aria-hidden="true">↗</span></a><a class="btn outline" href="#opciones">Explorar la propuesta ↓</a></div><p class="smallnote" style="margin-top:24px">Concepto de sitio web · No constituye una oferta comercial oficial de PIKININUS Eventos.</p></div><div class="hero-photo reveal"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1800&q=85" alt="Fotografía ilustrativa de Salón y fiestas infantiles · Luque" fetchpriority="high" onerror="this.style.opacity='.17';this.style.filter='grayscale(1)'"><div class="hero-stamp"><span>30–180 invitados · Capacidad publicada</span><small>Luque</small></div></div></div></section>
-<div class="marquee" aria-hidden="true"><div class="marquee-track"><b>✳</b><span>CELEBRÁ A LO GRANDE</span><b>✳</b><span>MOMENTOS FELICES</span><b>✳</b><span>LUQUE · PARAGUAY</span><b>✳</b><span>CELEBRÁ A LO GRANDE</span><b>✳</b><span>MOMENTOS FELICES</span><b>✳</b><span>LUQUE · PARAGUAY</span><b>✳</b><span>CELEBRÁ A LO GRANDE</span><b>✳</b><span>MOMENTOS FELICES</span><b>✳</b><span>LUQUE · PARAGUAY</span><b>✳</b><span>CELEBRÁ A LO GRANDE</span><b>✳</b><span>MOMENTOS FELICES</span><b>✳</b><span>LUQUE · PARAGUAY</span></div></div>
-<section class="section" id="experiencia"><div class="wrap"><div class="section-head reveal"><div><span class="eyebrow">Lo que nos mueve</span><h2>Una experiencia pensada para todos.</h2><p class="lead">Pensamos en celebraciones que fluyan desde el primer momento.</p></div><a href="#cotizar" class="btn outline">Contanos tu proyecto ↗</a></div><div class="grid3"><article class="feature reveal"><div class="num">01 / 03</div><div class="feature-icon" aria-hidden="true">🎈</div><h3>Todo en un lugar</h3><p>Una propuesta integral para que los grandes disfruten tanto como los chicos.</p></article><article class="feature reveal"><div class="num">02 / 03</div><div class="feature-icon" aria-hidden="true">🎠</div><h3>Diversión sin pausa</h3><p>Parque de juegos y ambientes pensados para festejar cada etapa.</p></article><article class="feature reveal"><div class="num">03 / 03</div><div class="feature-icon" aria-hidden="true">✨</div><h3>A tu manera</h3><p>La temática, los invitados y los detalles hacen cada celebración única.</p></article></div></div></section>
-<section class="section" id="opciones"><div class="wrap"><div class="section-head reveal"><div><span class="eyebrow">Pensado para festejar</span><h2>Una fiesta, <span class="serif" style="color:var(--accent)">infinitas posibilidades.</span></h2><p class="lead">Salón climatizado, juegos, ambientación y opciones integrales. Cada festejo tiene su propia historia.</p></div></div><div class="bento"><div class="bento-photo"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1300&q=85" alt="Imagen ilustrativa de una celebración" loading="lazy" onerror="this.style.opacity='.17';this.style.filter='grayscale(1)'"></div><div class="bento-copy"><div><span class="eyebrow">Elegí cómo celebrarlo</span><h2>Vos disfrutás.<br>Nosotros imaginamos.</h2><p>El combo ideal depende de tu fecha, la cantidad de invitados y el tipo de celebración. Consultá disponibilidad y propuestas personalizadas.</p></div><a class="btn white" href="#cotizar">Organizar mi fiesta ↗</a></div></div></div></section><section class="section" id="momentos"><div class="wrap"><div class="section-head"><div><span class="eyebrow">Inspiración para tu evento</span><h2>Celebrar también es <em style="color:var(--accent)">imaginar.</em></h2></div><p class="smallnote">Fotografías ilustrativas. No representan eventos reales de Pikininus.</p></div><div class="gallery"><figure class="filterable wide" data-category="todos"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1300&q=85" alt="Fotografía ilustrativa: Celebraciones llenas de magia" loading="lazy" onerror="this.style.opacity='.17';this.style.filter='grayscale(1)'"><figcaption>Celebraciones llenas de magia<small>Imagen ilustrativa · Propuesta de diseño</small></figcaption></figure><figure class="filterable wide" data-category="todos"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1300&q=85" alt="Fotografía ilustrativa: Momentos que se quedan" loading="lazy" onerror="this.style.opacity='.17';this.style.filter='grayscale(1)'"><figcaption>Momentos que se quedan<small>Imagen ilustrativa · Propuesta de diseño</small></figcaption></figure><figure class="filterable wide" data-category="todos"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1300&q=85" alt="Fotografía ilustrativa: Detalles que enamoran" loading="lazy" onerror="this.style.opacity='.17';this.style.filter='grayscale(1)'"><figcaption>Detalles que enamoran<small>Imagen ilustrativa · Propuesta de diseño</small></figcaption></figure></div></div></section>
-<section class="section" id="contacto"><div class="wrap"><div class="split" style="gap:48px"><div><span class="eyebrow">Hablemos</span><h2>Lo mejor empieza con una <em style="color:var(--accent)">conversación.</em></h2><p class="lead">Completá los datos para preparar tu consulta. Vas a poder revisarla en WhatsApp antes de enviarla.</p><div class="pills"><span class="pill">Atención personalizada</span><span class="pill">Consulta sin compromiso</span></div><a href="https://wa.me/595984472186?text=Hola%2C%20quisiera%20consultar%20sobre%20PIKININUS%20Eventos." target="_blank" rel="noopener noreferrer" class="btn outline" style="margin-top:28px">WhatsApp directo ↗</a></div><div class="quote reveal" id="cotizar"><span class="eyebrow">Tu proyecto comienza acá</span><h3>Tu fecha merece algo especial.</h3><p class="lead" style="font-size:15px;margin-bottom:27px">Contanos lo esencial y preparamos un mensaje para consultar disponibilidad y opciones.</p><form id="leadForm"><div class="form-grid"><div class="field "><label for="evento">undefined *</label><select id="evento" name="Tipo de celebración" required><option value="">Seleccioná una opción</option><option>Cumpleaños infantil</option><option>Primer añito</option><option>Bautismo</option><option>Otra celebración</option></select></div><div class="field "><label for="guests">undefined *</label><input type="number" id="guests" name="Cantidad de invitados" required   placeholder="Ej. 80"></div><div class="field "><label for="date">undefined *</label><input type="date" id="date" name="Fecha deseada" required   placeholder=""></div><div class="field "><label for="name">undefined *</label><input type="text" id="name" name="Tu nombre" required   placeholder=""></div><div class="field wide"><label for="notes">undefined</label><textarea id="notes" name="Detalles de la fiesta" placeholder="Temática, edades, preferencia de combo…"></textarea></div></div><div class="quote-bottom"><p class="smallnote">Al continuar, se abrirá WhatsApp con tu consulta prearmada. No se guardan datos en este sitio de demostración.</p><button type="submit" class="btn accent">Consultar fecha y combos ↗</button></div></form></div></div></div></section>
-<section class="closing"><div class="wrap reveal"><span class="eyebrow">¿Empezamos?</span><h2>Que tu próxima idea <span style="color:var(--accent)">tome forma.</span></h2><p class="lead">Estamos a un mensaje de conversar sobre lo que imaginás.</p><a class="btn accent" href="#cotizar" style="margin-top:24px">Empezar ahora ↗</a></div></section>
-</main><footer><div class="wrap"><div class="footer-grid"><div><a class="logo" href="#inicio" style="color:white">PIKININUS</a><p style="font-size:13px;margin-top:14px">Salón y fiestas infantiles · Luque</p></div><div class="footer-links"><a href="#inicio">Inicio</a><a href="#opciones">Explorar</a><a href="#cotizar">Contacto</a></div></div><div class="footer-fine"><span>© 2026 · Concepto visual. No es la página oficial de PIKININUS Eventos.</span><span>Propuesta diseñada por <strong>NovaTec Engineering</strong> · Imágenes ilustrativas de Unsplash.</span></div></div></footer>
-<a class="float-wa" target="_blank" rel="noopener noreferrer" href="https://wa.me/595984472186?text=Hola%2C%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n." aria-label="Abrir WhatsApp">✆ <span>WhatsApp</span></a><div class="toast" role="status" id="toast">Consulta preparada.</div>
-</div><script>
-(()=>{
-const menu=document.querySelector('#menu'),toggle=document.querySelector('#menuToggle');
-toggle?.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'✕':'☰';document.body.classList.toggle('nav-open',open)});
-document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');document.body.classList.remove('nav-open');toggle?.setAttribute('aria-expanded','false');if(toggle)toggle.textContent='☰'}));
-const observer='IntersectionObserver'in window?new IntersectionObserver(items=>items.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');observer.unobserve(x.target)}}),{threshold:.12}):null;document.querySelectorAll('.reveal').forEach(x=>observer?observer.observe(x):x.classList.add('visible'));
-document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.setAttribute('aria-pressed','false'));btn.setAttribute('aria-pressed','true');const val=btn.dataset.filter;document.querySelectorAll('.filterable').forEach(el=>{el.hidden=val!=='todos'&&el.dataset.category!==val})}));
-document.querySelectorAll('.select-service').forEach(btn=>btn.addEventListener('click',()=>{const sel=document.getElementById('treatment');if(sel)sel.value=btn.dataset.service;document.querySelector('#cotizar')?.scrollIntoView({behavior:'smooth'})}));
-document.querySelectorAll('input[type=date]').forEach(el=>el.min=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,10));
-document.getElementById('leadForm')?.addEventListener('submit',ev=>{ev.preventDefault();const form=ev.currentTarget;if(!form.reportValidity())return;const values=[...new FormData(form).entries()].filter(([k,v])=>String(v).trim()).map(([k,v])=>k+': '+v).join('\n');const text='Hola, quisiera consultar en PIKININUS Eventos.\n\n'+values+'\n\n(Mensaje generado desde una propuesta de diseño no oficial de NovaTec.)';const url='https://wa.me/595984472186?text='+encodeURIComponent(text);const win=window.open(url,'_blank','noopener,noreferrer');if(!win){window.location.href=url}const toast=document.getElementById('toast');toast?.classList.add('show');setTimeout(()=>toast?.classList.remove('show'),2600)});
+<!doctype html>
+<html lang="es-PY">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#171715">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="BOZZETTO Home & Deco · Una propuesta visual de diseño de interiores, muebles a medida y espacios para vivir. Demo conceptual de NovaTec Engineering.">
+<meta property="og:title" content="Bozzetto Home & Deco — El arte de habitar">
+<meta property="og:description" content="Descubrí una nueva manera de imaginar tus espacios. Propuesta visual independiente de NovaTec Engineering.">
+<meta property="og:type" content="website">
+<title>BOZZETTO — Home & Deco | El arte de habitar</title>
+<link rel="icon" type="image/svg+xml" href="assets/bozzetto-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1c1b19;--night:#181816;--night2:#262521;--paper:#f6f3ed;--cream:#ebe6dc;--linen:#ded7c9;--clay:#a37758;--rust:#9d6851;--gray:#79756e;--white:#fffdf8;--stroke:#d6d0c6;--display:"Cormorant Garamond",Georgia,serif;--body:"DM Sans",Arial,sans-serif;--ui:"Manrope",Arial,sans-serif;--ease:cubic-bezier(.22,1,.36,1)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+body.lock-scroll{overflow:hidden}
+a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}img{display:block;width:100%}
+:focus-visible{outline:2px solid #bf8e64;outline-offset:4px}
+::selection{background:#b99175;color:#fff}
+.skip{position:fixed;top:-120px;left:15px;background:#fff;color:#111;padding:12px 20px;z-index:1000}.skip:focus{top:12px}
+.shell{max-width:1520px;margin-inline:auto;padding-inline:clamp(21px,5.5vw,100px)}
+#page{overflow:clip}.eyebrow{font:700 10px/1.6 var(--ui);letter-spacing:.21em;text-transform:uppercase}
+.serif{font-family:var(--display);font-weight:400;font-style:italic}
+.display{font:400 clamp(50px,7.3vw,116px)/.92 var(--display);letter-spacing:-.045em}
+.display em{font-weight:400}
+.icon-arrow{width:19px;height:19px;display:inline-block;flex:0 0 auto}
+.arrowlink{display:inline-flex;align-items:center;justify-content:space-between;gap:50px;padding-bottom:12px;border-bottom:1px solid currentColor;font:700 11px var(--ui);letter-spacing:.12em;text-transform:uppercase;transition:gap .3s,color .3s}
+.arrowlink:hover{gap:65px;color:var(--clay)}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:32px;padding:18px 24px;min-height:60px;border:1px solid transparent;background:var(--ink);color:#fff;white-space:nowrap;font:700 10px/1.4 var(--ui);letter-spacing:.13em;text-transform:uppercase;transition:transform .25s,background .25s,color .25s}
+.btn:hover{transform:translateY(-3px);background:#5c483d}.btn-outline{border-color:rgba(255,255,255,.55);background:transparent;color:white}.btn-outline:hover{background:#fff;color:var(--ink)}.btn-pale{background:#fffdf7;color:#201d1b}.btn-pale:hover{background:#e7d8c5;color:var(--ink)}
+/* Cinematic opening: two shutters + wordmark, automatically dismissed */
+#opening{position:fixed;inset:0;z-index:999;pointer-events:none;display:grid;place-items:center;color:white;animation:opening-gone .01s linear 3.13s forwards}
+#opening:before,#opening:after{content:"";position:absolute;inset:0;width:50%;background:#111110;animation:shutter-left 1.12s var(--ease) 1.92s forwards}
+#opening:after{left:50%;animation-name:shutter-right}
+.opening-inner{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:23px;animation:opening-away .48s ease 1.67s forwards}
+.opening-inner img{width:112px;height:112px;filter:drop-shadow(0 8px 20px #0007);animation:opening-enter .9s var(--ease) both}
+.opening-inner .caption{font:500 10px var(--ui);letter-spacing:.35em;text-transform:uppercase;color:#d8c5ac}
+.opening-line{width:200px;height:1px;background:#ffffff4d;position:relative;overflow:hidden}.opening-line:before{content:"";position:absolute;inset:0;transform-origin:left;background:#dbc6ad;animation:opening-load 1.7s ease both}
+@keyframes opening-load{from{transform:scaleX(0)}to{transform:scaleX(1)}}@keyframes opening-enter{from{opacity:0;transform:scale(.82) translateY(24px)}to{opacity:1;transform:scale(1)}}@keyframes opening-away{to{opacity:0;transform:translateY(-15px)}}@keyframes shutter-left{to{transform:translateX(-102%)}}@keyframes shutter-right{to{transform:translateX(102%)}}@keyframes opening-gone{to{visibility:hidden}}
+.notice{background:#151512;color:#ded9cf;text-align:center;padding:7px 16px;font:600 9px/1.65 var(--ui);letter-spacing:.10em;text-transform:uppercase}
+.notice b{color:#d8b69a;font-weight:700}
+#header{position:absolute;z-index:60;top:28px;left:0;right:0;height:98px;color:#fff;transition:background .35s,top .35s,height .35s,border-color .35s;display:flex;align-items:center}
+#header.sticky{position:fixed;top:0;height:78px;background:rgba(21,21,19,.95);backdrop-filter:blur(18px);border-bottom:1px solid #ffffff21}
+.navrow{width:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+.nav-links{display:flex;align-items:center;gap:31px}.nav-links a{font:700 10px var(--ui);letter-spacing:.13em;text-transform:uppercase;transition:opacity .25s}.nav-links a:hover{opacity:.55}
+.brand{display:flex;align-items:center;gap:13px;justify-self:center}
+.brand img{width:57px;height:57px;object-fit:contain;flex:none}
+.brandword{display:flex;flex-direction:column;line-height:1.1}
+.brandword strong{font:800 20px var(--ui);letter-spacing:.025em}
+.brandword small{font:600 8px var(--ui);letter-spacing:.36em;margin-top:7px}
+.nav-right{display:flex;justify-content:flex-end;align-items:center;gap:25px}.nav-right>a:not(.nav-button){font:700 10px var(--ui);letter-spacing:.15em;text-transform:uppercase}
+.nav-button{padding:15px 19px;border:1px solid #ffffff88;font:800 10px var(--ui);letter-spacing:.13em;text-transform:uppercase;transition:.2s}
+.nav-button:hover{background:white;color:var(--ink)}
+.mobile-menu{display:none;min-width:44px;min-height:44px;background:transparent;color:#fff;border:1px solid #ffffff73;position:relative;z-index:63}
+.menu-panel{display:none}
+/* Big editorial hero */
+.hero{position:relative;min-height:760px;height:clamp(760px,100svh,1040px);color:#fff;isolation:isolate;background:#41433d}
+.hero-image{position:absolute;inset:0;overflow:hidden;z-index:-3}.hero-image img{height:100%;object-fit:cover;object-position:center 48%;filter:brightness(.80) saturate(.69);animation:hero-breathe 15s ease-out both}
+@keyframes hero-breathe{from{transform:scale(1.16)}to{transform:scale(1)}}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,19,17,.88) 0%,rgba(18,20,19,.48) 48%,rgba(20,21,19,.13) 100%),linear-gradient(0deg,rgba(13,16,14,.7),transparent 27%),linear-gradient(180deg,rgba(9,11,10,.3),transparent 28%);z-index:-2}
+.hero-grid{position:absolute;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(to right,transparent calc(50% - .5px),rgba(255,255,255,.14) 50%,transparent calc(50% + .5px))}
+.hero .shell{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-top:170px;padding-bottom:140px}
+.hero-kicker{display:flex;align-items:center;gap:17px;opacity:0;animation:rise .9s var(--ease) 2.2s forwards}
+.hero-kicker:before{content:"";width:33px;height:1px;background:#ead7c4}
+.hero h1{font:400 clamp(81px,10vw,165px)/.75 var(--display);letter-spacing:-.06em;max-width:1020px;margin:37px 0 27px;opacity:0;animation:rise 1s var(--ease) 2.3s forwards}
+.hero h1 em{display:block;padding-top:.07em;font-size:.95em;color:#e6d3bf}
+.hero-description{max-width:470px;color:#edece7;font-size:14px;line-height:1.95;opacity:0;animation:rise .8s ease 2.53s forwards}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;opacity:0;animation:rise .8s ease 2.7s forwards}
+@keyframes rise{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:translateY(0)}}
+.hero-index{position:absolute;right:clamp(20px,5.5vw,100px);top:48%;display:flex;gap:20px;align-items:center;writing-mode:vertical-rl;font:700 9px var(--ui);letter-spacing:.23em;text-transform:uppercase;color:#fff}
+.hero-index:before{content:"";height:83px;width:1px;background:#fff}
+.hero-bottom{position:absolute;bottom:0;left:0;right:0;border-top:1px solid #ffffff4f}
+.hero-bottom-grid{min-height:84px;display:grid;grid-template-columns:1.05fr 1fr 1fr auto;align-items:center}
+.hero-bottom-grid>div{display:flex;align-items:center;gap:15px;font:700 9px var(--ui);letter-spacing:.11em;text-transform:uppercase;color:#deddd7}
+.hero-bottom-grid>div:not(:first-child){padding-left:28px;border-left:1px solid #ffffff40}
+.hero-bottom-grid b{color:#ddbea7;font:500 26px var(--display)}
+.scroll-note{font:700 9px var(--ui);letter-spacing:.17em;text-transform:uppercase;display:inline-flex;align-items:center;gap:11px}
+.scroll-note i{display:inline-block;width:1px;height:32px;background:#ddbea7;animation:scrollhint 1.6s infinite alternate}
+@keyframes scrollhint{to{height:16px}}
+.marquee{overflow:hidden;background:#22211e;color:#f5eee5;display:flex;align-items:center;min-height:69px}
+.marquee-track{display:flex;gap:38px;align-items:center;min-width:max-content;animation:marquee 37s linear infinite}
+.marquee-track span{font:500 12px var(--ui);letter-spacing:.24em;text-transform:uppercase}
+.marquee-track b{font:italic 400 30px var(--display);color:#c7a184}
+@keyframes marquee{to{transform:translateX(-50%)}}
+/* Brand statement */
+.statement{padding:clamp(105px,12vw,194px) 0 clamp(85px,10vw,150px);background:var(--paper)}
+.statement-grid{display:grid;grid-template-columns:.32fr .68fr;gap:50px}
+.section-index{font:700 10px var(--ui);letter-spacing:.22em;text-transform:uppercase;color:var(--clay)}
+.statement h2{font:400 clamp(55px,6.8vw,106px)/.98 var(--display);letter-spacing:-.048em;margin:0 0 40px}
+.statement h2 em{font-weight:400;color:var(--rust)}
+.statement-foot{display:grid;grid-template-columns:1fr .65fr;gap:55px;align-items:end}
+.statement-foot p{font-size:15px;line-height:2;color:#625d54;margin:0;max-width:530px}
+.estamp{justify-self:end;width:145px;height:145px;border:1px solid #b7ada1;border-radius:50%;display:grid;place-items:center;text-align:center;transform:rotate(-13deg);font:700 10px/1.5 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:#6e5b4c;position:relative}
+.estamp:after{content:"✳";font-size:35px;position:absolute;top:26px;left:50%;transform:translateX(-50%);font-weight:400;color:#a77e61}.estamp span{margin-top:50px}
+/* Collections */
+.collections{background:#e6dfd4;padding:118px 0 132px}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:50px;margin-bottom:50px}
+.section-heading h2{font:400 clamp(60px,6.4vw,100px)/.9 var(--display);letter-spacing:-.05em;max-width:800px;margin:19px 0 0}
+.section-heading h2 em{color:#9e735a;font-weight:400}
+.section-heading p{font-size:14px;max-width:310px;color:#726c62;line-height:1.85;margin:0 0 8px}
+.collection-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:22px}
+.collection-feature{position:relative;min-height:630px;overflow:hidden;background:#b1afa3;color:#fff}
+.collection-feature img,.collection-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.collection-feature:hover img,.collection-tile:hover img{transform:scale(1.07)}
+.collection-feature:after,.collection-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#101412bc,transparent 65%);pointer-events:none}
+.collection-feature .label,.collection-tile .label{position:absolute;top:26px;left:28px;z-index:2;font:700 9px var(--ui);letter-spacing:.2em;text-transform:uppercase;color:#fff}
+.collection-feature .contents,.collection-tile .contents{position:absolute;bottom:32px;left:34px;right:32px;z-index:2;display:flex;justify-content:space-between;align-items:end;gap:20px}
+.collection-feature h3,.collection-tile h3{font:400 clamp(46px,5vw,77px)/.92 var(--display);letter-spacing:-.045em;margin:0}
+.collection-feature h3 em,.collection-tile h3 em{font-weight:400}
+.collection-feature .round-link,.collection-tile .round-link{display:grid;place-items:center;flex:0 0 auto;width:55px;height:55px;border:1px solid #ffffff91;border-radius:50%;transition:background .25s,color .25s}
+.collection-feature a:hover .round-link,.collection-tile a:hover .round-link{background:#fff;color:#1c1b19}
+.collection-feature .round-link svg,.collection-tile .round-link svg{width:19px;height:19px}
+.collection-side{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.collection-tile{position:relative;min-height:304px;overflow:hidden;background:#b1afa3;color:#fff}.collection-tile:nth-child(1){grid-column:1 / -1}
+.collection-tile h3{font-size:clamp(40px,3.8vw,57px)}.collection-tile.small h3{font-size:clamp(31px,2.8vw,42px)}
+.collection-tile .contents{bottom:21px;left:22px;right:22px}.collection-tile .label{left:22px;top:18px}
+.collection-tile .round-link{width:42px;height:42px}
+.collection-caption{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:20px;color:#71695d;font-size:11px}
+.collection-caption a{font:700 10px var(--ui);letter-spacing:.13em;text-transform:uppercase;border-bottom:1px solid #94725b;padding-bottom:4px;white-space:nowrap}
+/* Story */
+.craft{background:#21211e;color:#f5f0e8}
+.craft-inner{display:grid;grid-template-columns:1fr 1fr;min-height:730px}
+.craft-photo{position:relative;min-height:690px;overflow:hidden}.craft-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.68)}.craft-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,11,11,.5),transparent 50%)}
+.craft-photo span{position:absolute;bottom:27px;left:clamp(30px,7vw,125px);z-index:2;font:700 9px var(--ui);letter-spacing:.18em;text-transform:uppercase}
+.craft-copy{display:flex;flex-direction:column;justify-content:center;padding:90px clamp(40px,7vw,125px)}
+.craft-copy .section-index{color:#c3a38c}
+.craft-copy h2{font:400 clamp(58px,6vw,94px)/.92 var(--display);letter-spacing:-.045em;margin:28px 0 30px}
+.craft-copy h2 em{color:#d8bda7}
+.craft-copy p{color:#c4beb5;font:400 14px/2 var(--body);max-width:510px}
+.craft-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:19px}
+.craft-tags span{border:1px solid #ffffff4b;padding:9px 13px;font:600 9px var(--ui);letter-spacing:.12em;text-transform:uppercase}
+.craft-copy .footnote{font-size:11px;color:#a7a198;margin-top:35px}
+/* Moodbook tabs */
+.mood{background:#f6f3ed;padding:130px 0}
+.mood-intro{text-align:center;max-width:810px;margin:0 auto 55px}
+.mood-intro .section-index{display:block;margin-bottom:25px}
+.mood-intro h2{font:400 clamp(60px,6.7vw,105px)/.9 var(--display);letter-spacing:-.05em;margin:0 0 25px}
+.mood-intro h2 em{color:var(--rust)}
+.mood-intro p{font-size:14px;color:#777066;max-width:570px;margin:auto}
+.mood-tabs{display:flex;justify-content:center;gap:35px;margin-bottom:30px}
+.mood-tabs button{background:none;border:0;padding:12px 0;color:#858075;font:700 10px var(--ui);letter-spacing:.18em;text-transform:uppercase;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.mood-tabs button[aria-selected=true],.mood-tabs button:hover{color:#251e17;border-color:#251e17}
+.mood-panel{display:grid;grid-template-columns:1.32fr .68fr;min-height:590px;background:#ede8df}
+.mood-image{position:relative;min-height:590px;overflow:hidden;background:#a39888}
+.mood-image img{position:absolute;inset:0;height:100%;width:100%;object-fit:cover;transition:opacity .35s,transform .6s}
+.mood-image.is-loading img{opacity:.12;transform:scale(1.035)}
+.mood-content{display:flex;flex-direction:column;align-items:start;justify-content:center;padding:75px clamp(30px,5.5vw,90px)}
+.mood-content .serial{font:400 80px/1 var(--display);color:#b2a593}
+.mood-content h3{font:400 clamp(48px,5vw,79px)/.92 var(--display);letter-spacing:-.045em;margin:32px 0 23px}
+.mood-content h3 em{color:#977156}
+.mood-content p{color:#786f64;font-size:14px;line-height:1.9;max-width:340px}
+.mood-meta{display:flex;align-items:center;gap:10px;margin:18px 0 30px}
+.mood-meta i{display:block;width:22px;height:22px;border:1px solid #0000001b;border-radius:50%}
+.mood-meta i:nth-child(1){background:#dfc9a8}.mood-meta i:nth-child(2){background:#a99f89}.mood-meta i:nth-child(3){background:#463b34}
+.mood-content a{margin-top:12px}
+/* Philosophy */
+.process{background:#ede8df;padding:115px 0 140px}
+.process-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(60px,10vw,190px)}
+.process h2{font:400 clamp(60px,6.5vw,100px)/.95 var(--display);letter-spacing:-.05em;margin:25px 0}
+.process h2 em{color:#986d53}
+.process-intro p{font-size:14px;color:#746d62;max-width:360px;line-height:1.95}
+.process-rows{border-top:1px solid #c7beb1}
+.process-row{display:grid;grid-template-columns:55px .72fr 1fr;gap:17px;align-items:start;padding:32px 0;border-bottom:1px solid #c7beb1}
+.process-row .index{font:400 35px/.9 var(--display);color:#a98066}
+.process-row h3{font:500 30px/1.1 var(--display);margin:0}
+.process-row p{font-size:13px;color:#777065;line-height:1.85;margin:0}
+.banner{background:#211f1c;color:#fff;height:390px;position:relative;isolation:isolate;display:flex;align-items:center}
+.banner img{position:absolute;inset:0;height:100%;object-fit:cover;opacity:.35;filter:saturate(.55);z-index:-2}
+.banner:before{content:"";position:absolute;inset:0;background:#15120ebd;z-index:-1}
+.banner .shell{width:100%;display:flex;justify-content:space-between;align-items:end;gap:35px}
+.banner h2{font:400 clamp(58px,7vw,108px)/.85 var(--display);letter-spacing:-.055em;max-width:800px;margin:20px 0 0}
+.banner h2 em{color:#e3b99d}
+.banner .btn{margin-bottom:9px}
+/* Showroom */
+.showroom{background:#f7f4ef;padding:130px 0}
+.showroom-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,130px);align-items:center}
+.showroom-image{position:relative;height:600px;overflow:hidden;background:#bbb3a5}
+.showroom-image img{height:100%;object-fit:cover}
+.showroom-image:before{content:"";position:absolute;left:20px;top:20px;bottom:20px;right:20px;border:1px solid rgba(255,255,255,.68);z-index:1;pointer-events:none}
+.showroom-image small{position:absolute;left:34px;bottom:30px;background:#211b17d6;color:#f7f2ed;font:600 9px var(--ui);letter-spacing:.13em;text-transform:uppercase;padding:10px 12px;z-index:2}
+.showroom-copy h2{font:400 clamp(60px,6.7vw,100px)/.9 var(--display);letter-spacing:-.05em;margin:28px 0 22px}
+.showroom-copy h2 em{color:#9b6f53}
+.showroom-copy>p{color:#726b62;font-size:14px;max-width:450px;line-height:1.95}
+.info-item{display:grid;grid-template-columns:24px 1fr;gap:19px;padding:23px 0;border-top:1px solid #d5cdc0}
+.info-item svg{width:22px;height:22px;stroke:#a47a5e;fill:none;stroke-width:1.5}
+.info-item span{display:block;font:700 9px var(--ui);letter-spacing:.2em;color:#928778;text-transform:uppercase}
+.info-item strong{display:block;font:500 15px/1.7 var(--body);color:#282522;margin-top:3px}
+.info-item small{display:block;font-size:11px;color:#8a8177;margin-top:4px}
+.showroom-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
+.showroom-actions .btn{min-height:53px}
+.showroom-actions .arrowlink{align-self:center}
+/* Contact */
+.contact{background:#262522;color:#f6f2ec;padding:125px 0}
+.contact-grid{display:grid;grid-template-columns:.84fr 1.16fr;gap:clamp(45px,8vw,130px)}
+.contact h2{font:400 clamp(65px,7vw,105px)/.87 var(--display);letter-spacing:-.05em;margin:32px 0 30px}
+.contact h2 em{color:#d6b4a0}
+.contact p{color:#c3bdb4;max-width:420px;line-height:2;font-size:14px}
+.contact-number{margin-top:53px;border-top:1px solid #ffffff4c;padding-top:22px}
+.contact-number small{display:block;font:700 10px var(--ui);letter-spacing:.16em;text-transform:uppercase;color:#c5a88f;margin-bottom:10px}
+.contact-number a{font:400 30px var(--display)}
+.quote{background:#f8f5ef;color:#26221e;padding:clamp(34px,4.8vw,69px);position:relative}
+.quote:before{content:"";position:absolute;top:0;left:0;width:80px;height:4px;background:var(--clay)}
+.quote .eyebrow{color:#9a745b}
+.quote h3{font:400 clamp(36px,3.2vw,51px)/1 var(--display);letter-spacing:-.035em;margin:20px 0 35px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:24px 18px}.field{display:flex;flex-direction:column;gap:9px}
+.field.wide{grid-column:1/-1}
+.field label{font:800 10px var(--ui);letter-spacing:.10em;text-transform:uppercase}
+.field input,.field select,.field textarea{background:#eee9e1;border:1px solid #d8d1c5;border-radius:0;width:100%;min-height:54px;padding:14px;color:#24211d;outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#aa846c;box-shadow:0 0 0 2px #a7846530}
+.field textarea{min-height:110px;resize:vertical}
+.form-bottom{display:flex;gap:20px;align-items:center;margin-top:26px}
+.form-bottom small{font-size:11px;line-height:1.6;color:#7c746a}
+.form-bottom .btn{white-space:normal;flex:none}
+.footer{background:#141411;color:#efede9;padding:58px 0 25px}
+.footer-top{display:grid;grid-template-columns:1.15fr .85fr .85fr;gap:45px;padding-bottom:65px}
+.footer .brand{justify-self:start}.footer .brand img{width:64px;height:64px}
+.footer p{font-size:12px;line-height:1.9;color:#b8b3aa;max-width:340px;margin-top:23px}
+.footer-col h4{font:700 10px var(--ui);letter-spacing:.16em;text-transform:uppercase;color:#cba88e;margin:4px 0 26px}
+.footer-col a{display:block;color:#ccc6bd;font-size:12px;margin:11px 0}.footer-col a:hover{color:#fff}
+.footer-fine{border-top:1px solid #ffffff2b;padding-top:23px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:10px;line-height:1.7;color:#918d87}
+.floating-wa{position:fixed;bottom:25px;right:25px;z-index:65;display:flex;align-items:center;gap:10px;background:#e9d8c5;color:#2e2b27;padding:15px 19px;box-shadow:0 14px 45px #0005;font:800 10px var(--ui);letter-spacing:.11em;text-transform:uppercase;transition:transform .25s}
+.floating-wa:hover{transform:translateY(-4px)}.floating-wa svg{width:19px;height:19px}
+.reveal{opacity:0;transform:translateY(38px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:1260px){.nav-links{gap:18px}.nav-right{gap:13px}.brandword strong{font-size:17px}.collection-feature{min-height:580px}.collection-tile{min-height:279px}.hero-bottom-grid>div{gap:8px}.hero-bottom-grid>div:not(:first-child){padding-left:12px}}
+@media(max-width:1050px){.nav-links,.nav-right>a:not(.nav-button){display:none}.navrow{grid-template-columns:auto 1fr auto}.brand{justify-self:start}.nav-right{grid-column:3}.nav-right .nav-button{display:none}.mobile-menu{display:inline-block}.menu-panel{position:fixed;inset:0;z-index:61;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;background:#171714;visibility:hidden;opacity:0;transition:opacity .3s,visibility .3s}.menu-panel.open{visibility:visible;opacity:1}.menu-panel a{font:400 clamp(48px,7vw,76px)/1 var(--display);color:#f2e9de}.menu-panel .menu-note{font:700 9px var(--ui);letter-spacing:.15em;text-transform:uppercase;color:#ba9a80;margin-top:30px}.hero h1{font-size:clamp(78px,10vw,125px)}.statement-grid{grid-template-columns:.25fr .75fr}.collections{padding:95px 0}.collection-grid{grid-template-columns:1fr}.collection-feature{min-height:540px}.collection-side{grid-template-columns:repeat(3,1fr)}.collection-tile:nth-child(1){grid-column:auto}.collection-tile,.collection-tile.small{min-height:290px}.collection-tile h3,.collection-tile.small h3{font-size:39px}.collection-tile .round-link{width:37px;height:37px}.craft-inner{min-height:600px}.craft-photo{min-height:600px}.craft-copy{padding:75px 40px}.mood-panel{min-height:490px}.mood-image{min-height:490px}.showroom-image{height:540px}.contact-grid{gap:40px}}
+@media(max-width:760px){.hero{height:100svh;min-height:720px}.hero .shell{padding-top:180px;padding-bottom:140px}.hero h1{font-size:clamp(76px,12vw,105px)}.hero-index{display:none}.hero-bottom-grid{grid-template-columns:1fr 1fr 1fr}.hero-bottom-grid>div{padding:11px 6px!important;flex-direction:column;align-items:flex-start;gap:0}.hero-bottom-grid>div b{font-size:24px}.hero-bottom-grid>div span{font-size:8px}.scroll-note{display:none}.statement{padding:88px 0}.statement-grid{grid-template-columns:1fr;gap:29px}.statement h2{font-size:clamp(67px,9vw,95px)}.section-heading{display:block}.section-heading p{margin-top:28px}.collection-side{grid-template-columns:1fr 1fr}.collection-tile:nth-child(1){grid-column:1/-1}.collection-tile{min-height:340px}.collection-tile.small{min-height:285px}.collection-tile.small h3{font-size:39px}.craft-inner{grid-template-columns:1fr}.craft-photo{min-height:470px}.craft-copy{padding:75px 30px}.mood{padding:90px 0}.mood-panel{grid-template-columns:1fr}.mood-image{min-height:430px}.mood-content{padding:50px 32px}.mood-content h3{font-size:65px;margin:19px 0}.mood-tabs{gap:20px}.process{padding:90px 0}.process-grid{grid-template-columns:1fr;gap:30px}.process-row{grid-template-columns:40px .75fr 1fr}.banner{min-height:430px;height:auto;padding:70px 0}.banner .shell{display:block}.banner .btn{margin-top:35px}.showroom{padding:90px 0}.showroom-grid{grid-template-columns:1fr;gap:52px}.showroom-image{height:490px}.contact-grid{grid-template-columns:1fr;gap:43px}.contact{padding:95px 0}.footer-top{grid-template-columns:1fr 1fr}.footer-top>div:first-child{grid-column:1/-1}}
+@media(max-width:520px){.shell{padding-inline:20px}.notice{font-size:8px}#header{top:40px;height:75px}#header.sticky{top:0;height:68px}.brand img{width:43px;height:43px}.brandword strong{font-size:15px}.brandword small{font-size:7px;letter-spacing:.2em}.hero{min-height:710px}.hero .shell{padding-top:143px;padding-bottom:119px}.hero h1{font-size:clamp(67px,15vw,90px);margin:26px 0}.hero-description{font-size:13px;max-width:335px}.hero-actions{gap:9px}.hero-actions .btn{min-height:52px;padding:14px 16px;font-size:9px;gap:12px}.hero-bottom-grid>div b{font-size:23px}.hero-bottom-grid>div span{line-height:1.5;font-size:7px}.statement h2{font-size:clamp(63px,13vw,83px)}.statement-foot{grid-template-columns:1fr}.estamp{justify-self:start;width:112px;height:112px;font-size:8px}.estamp:after{font-size:26px;top:17px}.estamp span{margin-top:37px}.section-heading h2{font-size:69px}.collection-feature{min-height:460px}.collection-feature h3{font-size:60px}.collection-feature .contents{left:22px;right:22px;bottom:23px}.collection-side{grid-template-columns:1fr}.collection-tile:nth-child(1){grid-column:auto}.collection-tile,.collection-tile.small{min-height:330px}.collection-tile h3,.collection-tile.small h3{font-size:48px}.collection-caption{align-items:flex-start;flex-direction:column}.craft-photo{min-height:370px}.craft-copy h2{font-size:71px}.mood-intro h2{font-size:74px}.mood-tabs{gap:15px;flex-wrap:wrap}.mood-tabs button{font-size:9px}.mood-image{min-height:345px}.mood-content h3{font-size:66px}.process h2{font-size:70px}.process-row{grid-template-columns:40px 1fr;gap:8px}.process-row p{grid-column:2}.banner h2{font-size:70px}.showroom-image{height:385px}.showroom-copy h2{font-size:75px}.showroom-actions{align-items:flex-start;flex-direction:column}.quote{padding:35px 22px}.fields{grid-template-columns:1fr;gap:18px}.field.wide{grid-column:1}.form-bottom{align-items:stretch;flex-direction:column}.form-bottom .btn{justify-content:space-between}.footer-top{grid-template-columns:1fr}.footer-top>div:first-child{grid-column:1}.floating-wa{right:13px;bottom:13px;padding:13px 14px}.floating-wa span{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-delay:0ms!important;transition-duration:.001ms!important}#opening{display:none!important}.hero h1,.hero-kicker,.hero-description,.hero-actions{opacity:1}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Ir al contenido</a>
+<div id="opening" aria-hidden="true"><div class="opening-inner"><img src="assets/bozzetto-mark.svg" alt=""><span class="caption">Diseño que se vive</span><span class="opening-line"></span></div></div>
+<div id="page">
+<div class="notice"><b>Propuesta visual · NovaTec Engineering</b> — Demo independiente, no sitio oficial · Imágenes referenciales</div>
+<header id="header">
+<nav class="shell navrow" aria-label="Navegación principal">
+<div class="nav-links"><a href="#colecciones">Colecciones</a><a href="#a-medida">A medida</a><a href="#inspiracion">Inspiración</a></div>
+<a class="brand" href="#inicio" aria-label="Bozzetto Home & Deco, volver al inicio"><img src="assets/bozzetto-mark.svg" alt=""><span class="brandword"><strong>BOZZETTO</strong><small>HOME & DECO</small></span></a>
+<div class="nav-right"><a href="#showroom">Showroom</a><a href="#contacto" class="nav-button">Diseñemos juntos ↗</a></div>
+<button type="button" class="mobile-menu" id="menuToggle" aria-controls="mobilePanel" aria-expanded="false" aria-label="Abrir menú">☰</button>
+</nav>
+<div id="mobilePanel" class="menu-panel" aria-hidden="true"><a href="#colecciones">Colecciones</a><a href="#a-medida">A medida</a><a href="#inspiracion">Inspiración</a><a href="#showroom">Showroom</a><a href="#contacto">Hablemos</a><span class="menu-note">BOZZETTO · HOME & DECO · ASUNCIÓN</span></div>
+</header>
+<main id="main">
+<section id="inicio" class="hero" aria-label="Bienvenidos a Bozzetto Home & Deco">
+<div class="hero-image"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2400&q=86" alt="Ambiente de living cálido y luminoso, fotografía de inspiración" fetchpriority="high"></div>
+<div class="hero-grid"></div>
+<div class="shell">
+<span class="hero-kicker eyebrow">BOZZETTO · HOME & DECO · ASUNCIÓN</span>
+<h1>El arte de <em>habitar.</em></h1>
+<p class="hero-description">Un espacio puede cambiar cómo vivimos. Descubrí el diseño, las texturas y las piezas que hacen que una casa se sienta verdaderamente tuya.</p>
+<div class="hero-actions"><a class="btn btn-pale" href="#colecciones">Explorar el universo Bozzetto <svg class="icon-arrow" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a><a class="btn btn-outline" href="#contacto">Contanos tu idea ↗</a></div>
+</div>
+<div class="hero-index">01 / 04 &nbsp; Diseño con identidad</div>
+<div class="hero-bottom"><div class="shell hero-bottom-grid"><div><b>01</b><span>Diseño con intención</span></div><div><b>02</b><span>Espacios a tu manera</span></div><div><b>03</b><span>Detalles que importan</span></div><a class="scroll-note" href="#esencia">Deslizá para explorar <i></i></a></div></div>
+</section>
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Diseño que se vive</span><b>✳</b><span>Home & Deco</span><b>✳</b><span>Espacios con intención</span><b>✳</b><span>Bozzetto</span><b>✳</b><span>Diseño que se vive</span><b>✳</b><span>Home & Deco</span><b>✳</b><span>Espacios con intención</span><b>✳</b><span>Bozzetto</span><b>✳</b></div></div>
+<section id="esencia" class="statement"><div class="shell statement-grid">
+<div class="section-index reveal">01 / Nuestra esencia<br><span style="color:#8b8579;font-weight:500;letter-spacing:.05em">La manera de sentir</span></div>
+<div class="reveal"><h2>Hay espacios que se miran.<br><em>Otros se sienten.</em></h2>
+<div class="statement-foot"><p>Creemos que los mejores ambientes no empiezan con un mueble, sino con una historia: <strong style="color:#28241e">la tuya.</strong> Una forma de vivir, una textura favorita, la luz de la tarde. En Bozzetto, el diseño cobra sentido cuando se vuelve parte de cada día.</p><div class="estamp"><span>Home<br>& Deco<br>Asunción</span></div></div>
+</div></div></section>
+<section id="colecciones" class="collections"><div class="shell">
+<div class="section-heading reveal"><div><span class="section-index">02 / Descubrí tu espacio</span><h2>Piezas para <em>vivir mejor.</em></h2></div><p>Una selección editorial de ambientes y posibilidades que representa el universo del mobiliario y la decoración de Bozzetto.</p></div>
+<div class="collection-grid">
+<a class="collection-feature reveal" href="#contacto" data-interest="Living y sillones" aria-label="Consultar por muebles para living"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1350&q=84" alt="Living con sofá y detalles en tonos naturales, imagen de referencia" loading="lazy"><span class="label">01 — Living & confort</span><div class="contents"><h3>Donde la vida <em>sucede.</em></h3><span class="round-link" aria-hidden="true"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.4"><path d="M5 19 19 5M8 5h11v11"/></svg></span></div></a>
+<div class="collection-side">
+<a class="collection-tile reveal" href="#contacto" data-interest="Dormitorios y vestidores" aria-label="Consultar por dormitorios y vestidores"><img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=980&q=84" alt="Dormitorio con textiles cálidos, imagen de referencia" loading="lazy"><span class="label">02 — Descanso</span><div class="contents"><h3>Un refugio <em>propio.</em></h3><span class="round-link" aria-hidden="true">↗</span></div></a>
+<a class="collection-tile small reveal" href="#contacto" data-interest="Diseño y muebles a medida" aria-label="Consultar por muebles a medida"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=84" alt="Ambiente con muebles integrados y acabados modernos, imagen de referencia" loading="lazy"><span class="label">03 — A medida</span><div class="contents"><h3>Hecho para <em>vos.</em></h3><span class="round-link" aria-hidden="true">↗</span></div></a>
+<a class="collection-tile small reveal" href="#contacto" data-interest="Decoración y detalles" aria-label="Consultar por decoración"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=84" alt="Objetos y textiles decorativos en un interior cálido, imagen de referencia" loading="lazy"><span class="label">04 — Detalles</span><div class="contents"><h3>El toque <em>final.</em></h3><span class="round-link" aria-hidden="true">↗</span></div></a>
+</div></div>
+<div class="collection-caption"><span>Fotografías de inspiración; no constituyen catálogo, inventario ni trabajos propios certificados.</span><a href="#contacto">Consultá disponibilidad y opciones ↗</a></div>
+</div></section>
+<section id="a-medida" class="craft">
+<div class="craft-inner"><div class="craft-photo reveal"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=84" alt="Ambiente contemporáneo con acabados y mobiliario integrados, foto ilustrativa" loading="lazy"><span>Diseño y materialidad · Imagen referencial</span></div>
+<div class="craft-copy reveal"><span class="section-index">03 / Nuestra historia</span><h2>El oficio de <em>hacerlo tuyo.</em></h2><p>La historia de Bozzetto está ligada al diseño y la fabricación de mobiliario a medida. Desde soluciones para cocinas y vestidores hasta muebles de dormitorio y trabajo, la personalización siempre ha sido parte de su identidad.</p><p>Una nota de 2015 destacó su trabajo con MDF, melamina y terminaciones de cantos en ABS: esos detalles que no siempre se ven, pero hacen a la calidad de una pieza.</p>
+<div class="craft-tags"><span>Mobiliario a medida</span><span>Materiales</span><span>Texturas</span><span>Detalle</span></div>
+<a class="arrowlink" style="margin-top:43px;color:#e9d4c4" href="#contacto">Consultá por tu proyecto <span aria-hidden="true">↗</span></a><p class="footnote">Trayectoria histórica documentada por InfoNegocios (2015–2019). Materiales y servicios vigentes sujetos a confirmación con la empresa.</p>
+</div></div></section>
+<section id="inspiracion" class="mood"><div class="shell">
+<div class="mood-intro reveal"><span class="section-index">04 / Inspiración interactiva</span><h2>Tu espacio. <em>Tu atmósfera.</em></h2><p>¿Sos de los tonos tierra o de los contrastes? Explorá tres maneras de imaginar un hogar con personalidad. Elegí una y descubrí qué sensación te representa.</p></div>
+<div class="mood-tabs" role="tablist" aria-label="Estilos de inspiración">
+<button type="button" class="mood-tab" id="tab-natural" role="tab" aria-selected="true" aria-controls="moodPanel" tabindex="0" data-mood="0">01 / Natural</button>
+<button type="button" class="mood-tab" id="tab-contraste" role="tab" aria-selected="false" aria-controls="moodPanel" tabindex="-1" data-mood="1">02 / Contraste</button>
+<button type="button" class="mood-tab" id="tab-calma" role="tab" aria-selected="false" aria-controls="moodPanel" tabindex="-1" data-mood="2">03 / Calma</button>
+</div>
+<div class="mood-panel reveal" id="moodPanel" role="tabpanel" aria-labelledby="tab-natural">
+<div class="mood-image" id="moodImageWrap"><img id="moodImage" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=84" alt="Living en tonos naturales, imagen de inspiración" loading="lazy"></div>
+<div class="mood-content"><span class="serial" id="moodSerial">01</span><h3 id="moodTitle">La belleza de <em>lo natural.</em></h3><p id="moodDescription">Maderas claras, tejidos suaves y tonos tierra. Una atmósfera que te invita a quedarte un rato más.</p><div class="mood-meta" aria-label="Gama cromática de inspiración"><i></i><i></i><i></i></div><a class="arrowlink" id="moodContact" href="#contacto">Me inspira este estilo <span aria-hidden="true">↗</span></a></div>
+</div></div></section>
+<section id="filosofia" class="process"><div class="shell process-grid">
+<div class="process-intro reveal"><span class="section-index">05 / Diseño con intención</span><h2>Los detalles <em>son todo.</em></h2><p>Desde las proporciones hasta los materiales, cada decisión forma parte de una experiencia que se disfruta durante años.</p></div>
+<div class="process-rows">
+<div class="process-row reveal"><span class="index">01</span><h3>Escuchar</h3><p>El estilo de vida y las necesidades reales son el mejor punto de partida para cualquier ambiente.</p></div>
+<div class="process-row reveal"><span class="index">02</span><h3>Imaginar</h3><p>Elegir formas, colores y texturas que dialoguen con el espacio y con quien lo habita.</p></div>
+<div class="process-row reveal"><span class="index">03</span><h3>Personalizar</h3><p>Explorar opciones de diseño y materiales para darle identidad a cada rincón.</p></div>
+<div class="process-row reveal"><span class="index">04</span><h3>Disfrutar</h3><p>Porque un buen ambiente no termina en una foto: comienza cuando se vuelve parte de tu día.</p></div>
+</div></div></section>
+<section class="banner"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1900&q=80" loading="lazy" alt=""><div class="shell"><div><span class="eyebrow">Tu próxima inspiración está más cerca de lo que pensás</span><h2>No es solo un mueble.<br><em>Es tu manera de vivir.</em></h2></div><a class="btn btn-pale" href="#contacto">Contanos tu idea ↗</a></div></section>
+<section class="showroom" id="showroom"><div class="shell showroom-grid">
+<div class="showroom-image reveal"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=82" loading="lazy" alt="Interior amueblado, fotografía de ambiente ilustrativa"><small>Atmósfera inspiracional · No fotografía del local</small></div>
+<div class="showroom-copy reveal"><span class="section-index">06 / Bozzetto en Asunción</span><h2>Te esperamos en <em>nuestro espacio.</em></h2><p>El diseño también se descubre conversando. Visitá Bozzetto Home & Deco en el barrio Seminario o escribinos para recibir asesoramiento sobre tu próximo proyecto.</p>
+<div class="info-item"><svg viewBox="0 0 24 24"><path d="M20 10c0 5.5-8 12-8 12S4 15.5 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.7"/></svg><div><span>Showroom</span><strong>25 de Mayo esq. Acá Carayá<br>Barrio Seminario · Asunción</strong><small>Ubicación identificada en directorios públicos; confirmar antes de visitar.</small></div></div>
+<div class="info-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><div><span>Horario de referencia</span><strong>Lunes a viernes · 09:00–18:00<br>Sábados · 09:00–13:00</strong><small>Puede variar en feriados; verificar por WhatsApp.</small></div></div>
+<div class="info-item"><svg viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 17h6M9 6h6"/></svg><div><span>Consultas</span><strong>+595 971 505963</strong></div></div>
+<div class="showroom-actions"><a class="btn" href="https://wa.me/595971505963?text=Hola%20Bozzetto%2C%20quisiera%20consultar%20sobre%20sus%20muebles." target="_blank" rel="noopener noreferrer">Escribir a Bozzetto ↗</a><a class="arrowlink" href="https://www.google.com/maps/search/?api=1&query=Bozzetto+Home+Deco+25+de+Mayo+Asuncion" target="_blank" rel="noopener noreferrer">Ver ubicación ↗</a></div>
+</div></div></section>
+<section class="contact" id="contacto"><div class="shell contact-grid">
+<div class="reveal"><span class="section-index" style="color:#cda98d">07 / Conversemos</span><h2>Tu idea merece <em>su espacio.</em></h2><p>¿Querés renovar el living, resolver un mueble a medida o empezar a imaginar un ambiente diferente? Contanos qué tenés en mente y prepararemos un mensaje para consultar con el equipo de Bozzetto.</p><div class="contact-number"><small>WhatsApp · Bozzetto Home & Deco</small><a href="https://wa.me/595971505963" target="_blank" rel="noopener noreferrer">+595 971 505963 ↗</a></div></div>
+<div class="quote reveal"><span class="eyebrow">Asesoramiento personalizado</span><h3>Imaginemos tu próximo espacio.</h3>
+<form id="contactForm"><div class="fields">
+<div class="field"><label for="clientName">Tu nombre *</label><input id="clientName" name="name" required maxlength="90" autocomplete="name" placeholder="¿Cómo te llamás?"></div>
+<div class="field"><label for="interest">¿Qué te interesa? *</label><select id="interest" name="interest" required><option value="">Elegí una opción</option><option>Living y sillones</option><option>Dormitorios y vestidores</option><option>Diseño y muebles a medida</option><option>Decoración y detalles</option><option>Cocinas y espacios</option><option>Otra consulta</option></select></div>
+<div class="field"><label for="style">Estilo que te inspira</label><select id="style" name="style"><option value="">Aún no lo sé</option><option>Natural y cálido</option><option>Contemporáneo y contrastado</option><option>Neutro y sereno</option><option>Me gustaría asesoramiento</option></select></div>
+<div class="field"><label for="city">Ciudad / zona</label><input id="city" name="city" maxlength="100" placeholder="Ej. Asunción"></div>
+<div class="field wide"><label for="details">Contanos tu idea</label><textarea id="details" name="details" maxlength="1500" placeholder="Espacio, medidas aproximadas, colores que te gustan, o lo que te gustaría cambiar..."></textarea></div>
+</div><div class="form-bottom"><button class="btn" type="submit">Enviar a WhatsApp ↗</button><small>Se abre WhatsApp con el mensaje prearmado. No se recopilan ni almacenan datos en esta demostración.</small></div></form>
+</div></div></section>
+</main>
+<footer class="footer"><div class="shell">
+<div class="footer-top"><div><a class="brand" href="#inicio" aria-label="Bozzetto Home & Deco, inicio"><img src="assets/bozzetto-mark.svg" alt=""><span class="brandword"><strong>BOZZETTO</strong><small>HOME & DECO</small></span></a><p>El arte de habitar. Mobiliario, diseño y detalles pensados para hacer que cada espacio se sienta tuyo.</p></div>
+<div class="footer-col"><h4>Explorá</h4><a href="#colecciones">Colecciones</a><a href="#a-medida">Muebles a medida</a><a href="#inspiracion">Inspiración</a><a href="#showroom">Showroom</a></div>
+<div class="footer-col"><h4>Contactos</h4><a href="https://wa.me/595971505963" target="_blank" rel="noopener noreferrer">WhatsApp +595 971 505963</a><a href="#showroom">25 de Mayo esq. Acá Carayá</a><a href="#contacto">Hacer una consulta</a></div></div>
+<div class="footer-fine"><span>© 2026 Bozzetto Home & Deco · Propuesta visual conceptual, no sitio oficial.</span><span>Creado especialmente por NovaTec Engineering · Imágenes de referencia de Unsplash.</span></div></div></footer>
+<a class="floating-wa" href="https://wa.me/595971505963?text=Hola%20Bozzetto%2C%20quisiera%20recibir%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp a Bozzetto">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m5 19 1.2-3.8a8.1 8.1 0 1 1 3 3.1L5 19Z"/><path d="M8.4 8.4c0 3.1 3.1 6.3 6.3 6.3l1.6-1.5-2.1-1.1-1.1 1c-1.2-.6-2-1.4-2.5-2.6l1-1-1.1-2.1-2.1 1Z"/></svg><span>Hablemos de tu espacio</span></a>
+</div>
+<script>
+(function(){
+'use strict';
+var header=document.getElementById('header');
+var toggle=document.getElementById('menuToggle');
+var panel=document.getElementById('mobilePanel');
+var motion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var opening=document.getElementById('opening');if(opening){window.setTimeout(function(){opening.remove()},motion?0:3200)}
+function syncHeader(){header.classList.toggle('sticky',window.scrollY>65);}
+window.addEventListener('scroll',syncHeader,{passive:true});syncHeader();
+function setMenu(open){panel.classList.toggle('open',open);panel.setAttribute('aria-hidden',String(!open));toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');toggle.textContent=open?'✕':'☰';document.body.classList.toggle('lock-scroll',open);}
+toggle.addEventListener('click',function(){setMenu(!panel.classList.contains('open'));});
+panel.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false);});});
+window.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+var reveals=document.querySelectorAll('.reveal');
+if(motion||!('IntersectionObserver'in window)){reveals.forEach(function(el){el.classList.add('in')});}
+else{var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -16px 0px'});reveals.forEach(function(el){obs.observe(el)});}
+var interest=document.getElementById('interest');
+document.querySelectorAll('[data-interest]').forEach(function(link){link.addEventListener('click',function(){interest.value=link.dataset.interest;});});
+var moods=[
+{title:'La belleza de <em>lo natural.</em>',desc:'Maderas claras, tejidos suaves y tonos tierra. Una atmósfera que te invita a quedarte un rato más.',image:'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=84',alt:'Living luminoso y cálido, foto de inspiración',style:'Natural y cálido'},
+{title:'El poder del <em>contraste.</em>',desc:'Texturas marcadas, formas escultóricas y tonos profundos. Para quienes disfrutan de los espacios con carácter.',image:'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=84',alt:'Interior moderno con tonos contrastados, imagen de inspiración',style:'Contemporáneo y contrastado'},
+{title:'Volver a <em>la calma.</em>',desc:'Líneas serenas, iluminación suave y una paleta discreta. Diseñar también es dar lugar al descanso.',image:'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1600&q=84',alt:'Ambiente delicado de tonos neutros, imagen de inspiración',style:'Neutro y sereno'}
+];
+var selectedMood=0;
+var moodPanel=document.getElementById('moodPanel'),moodWrap=document.getElementById('moodImageWrap'),moodImg=document.getElementById('moodImage'),moodTitle=document.getElementById('moodTitle'),moodDescription=document.getElementById('moodDescription'),moodSerial=document.getElementById('moodSerial'),moodButtons=Array.from(document.querySelectorAll('[data-mood]'));
+function changeMood(index){
+ if(index<0||index>=moods.length)return;
+ selectedMood=index;var item=moods[index];
+ moodButtons.forEach(function(b,i){var active=i===index;b.setAttribute('aria-selected',String(active));b.setAttribute('tabindex',active?'0':'-1');});
+ moodPanel.setAttribute('aria-labelledby',moodButtons[index].id);
+ moodTitle.innerHTML=item.title;moodDescription.textContent=item.desc;moodSerial.textContent=String(index+1).padStart(2,'0');
+ moodWrap.classList.add('is-loading');
+ var next=new Image();next.onload=function(){if(index===selectedMood){moodImg.src=item.image;moodImg.alt=item.alt;moodWrap.classList.remove('is-loading');}};next.onerror=function(){moodWrap.classList.remove('is-loading');};next.src=item.image;
+}
+moodButtons.forEach(function(b){b.addEventListener('click',function(){changeMood(Number(b.dataset.mood));});b.addEventListener('keydown',function(e){if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft'&&e.key!=='Home'&&e.key!=='End')return;e.preventDefault();var i=Number(b.dataset.mood);var next=e.key==='Home'?0:e.key==='End'?moods.length-1:e.key==='ArrowRight'?(i+1)%moods.length:(i+moods.length-1)%moods.length;changeMood(next);moodButtons[next].focus();});});
+document.getElementById('moodContact').addEventListener('click',function(){document.getElementById('style').value=moods[selectedMood].style;});
+var form=document.getElementById('contactForm');
+form.addEventListener('submit',function(e){e.preventDefault();if(!form.reportValidity())return;var v=function(id){return document.getElementById(id).value.trim()};
+var lines=['Hola Bozzetto Home & Deco, quisiera consultar sobre un espacio o mueble.','','Nombre: '+v('clientName'),'Interés: '+v('interest')];if(v('style'))lines.push('Estilo: '+v('style'));if(v('city'))lines.push('Ciudad: '+v('city'));if(v('details'))lines.push('Idea: '+v('details'));lines.push('','Consulta preparada desde una propuesta visual conceptual de NovaTec.');
+var url='https://wa.me/595971505963?text='+encodeURIComponent(lines.join('\n'));var popup=window.open(url,'_blank','noopener,noreferrer');if(!popup)window.location.assign(url);
+});
 })();
- </script></body></html>
+</script>
+</body>
+</html>
