@@ -341,6 +341,7 @@ var header=document.getElementById('header');
 var toggle=document.getElementById('menuToggle');
 var panel=document.getElementById('mobilePanel');
 var motion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var opening=document.getElementById('opening');if(opening){window.setTimeout(function(){opening.remove()},motion?0:3200)}
 function syncHeader(){header.classList.toggle('sticky',window.scrollY>65);}
 window.addEventListener('scroll',syncHeader,{passive:true});syncHeader();
 function setMenu(open){panel.classList.toggle('open',open);panel.setAttribute('aria-hidden',String(!open));toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');toggle.textContent=open?'✕':'☰';document.body.classList.toggle('lock-scroll',open);}
