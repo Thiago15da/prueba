@@ -17,7 +17,7 @@ await check('Marca, propuesta y contacto correctos',async()=>{
  assert.equal(await desktop.locator('h1').count(),1);
  assert.equal(await desktop.locator('body').innerText().then(s=>/PIKININUS|OHANA|ACV Constructora/.test(s)),false);
  assert.ok(await desktop.locator('a[href*="595971505963"]').count()>0);
- assert.equal(await desktop.locator('img[src="assets/bozzetto-mark.svg"]').count(),3);
+ assert.equal(await desktop.locator('img[src="assets/bozzetto-mark.svg"]').count(),2);
 });
 await check('Entrada cinematográfica se retira automáticamente',async()=>{
  assert.equal(await desktop.locator('#opening').count(),0,'la cortina sigue en el DOM y no terminó la animación');
