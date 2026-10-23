@@ -20,14 +20,24 @@ await check('Marca, propuesta y contacto correctos',async()=>{
  assert.equal(await desktop.locator('img[src="assets/bozzetto-mark.svg"]').count(),3);
 });
 await check('Entrada cinematográfica se retira automáticamente',async()=>{
- const rect=await desktop.locator('#opening').boundingBox();
- assert.ok(rect&&rect.y+rect.height<5,'la cortina sigue bloqueando la web');
+ const state=await desktop.locator('#opening').evaluate(el=>({visibility:getComputedStyle(el).visibility,pointerEvents:getComputedStyle(el).pointerEvents}));
+ assert.equal(state.visibility,'hidden','la cortina sigue visible');
+ assert.equal(state.pointerEvents,'none','la cortina bloquea clics');
  await desktop.locator('a[href="#colecciones"]').first().click();
  assert.equal(await desktop.evaluate(()=>location.hash),'#colecciones');
 });
 await check('Fotografía hero real carga',async()=>{
  const loaded=await desktop.locator('.hero-image img').evaluate(el=>el.complete&&el.naturalWidth>0);
  assert.ok(loaded,'la imagen principal de Unsplash no cargó');
+});
+await check('Imágenes editoriales de colecciones cargan',async()=>{
+ await desktop.locator('.collection-grid').scrollIntoViewIfNeeded();
+ const imgs=desktop.locator('.collection-grid img');
+ for(let i=0;i<await imgs.count();i++){
+  const el=imgs.nth(i);await el.scrollIntoViewIfNeeded();
+  await el.evaluate(img=>img.decode().catch(()=>null));
+  assert.ok(await el.evaluate(img=>img.complete&&img.naturalWidth>0),'foto de colección '+i+' no cargó');
+ }
 });
 await check('Tarjeta de colección completa el interés',async()=>{
  await desktop.locator('a[data-interest="Dormitorios y vestidores"]').click();
@@ -83,4 +93,4 @@ await mobile.evaluate(async()=>{for(let y=0;y<document.documentElement.scrollHei
 await mobile.screenshot({path:'test-results/bozzetto-mobile.png',fullPage:true,animations:'disabled'});
 await browser.close();
 if(failures.length){console.error('FAILURES',JSON.stringify(failures,null,2));process.exitCode=1}
-else console.log('OK: 9 pruebas completas y capturas escritorio/móvil');
+else console.log('OK: 10 pruebas completas y capturas escritorio/móvil');
